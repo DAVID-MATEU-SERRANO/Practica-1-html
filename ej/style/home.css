@@ -188,3 +188,90 @@ main {
 .right-content{
     background-color: rgb(236, 127, 255);
 }
+
+
+
+
+/* FOOTER */
+
+footer{
+    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42)); 
+    border-radius: 5px;
+    box-shadow: 7px 7px 14px rgb(17, 17, 17);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90px;
+    align-items: center;
+
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.copy{
+    width: 150px;
+    /*background-color: red;*/
+    color: rgb(215, 215, 215);
+    font-size: 16px;
+    margin-left:20px;
+    transition: 0.25s;
+}
+
+.copy:hover {
+    text-shadow: 0px 0px 10px white;
+    font-size: 17px;
+    color: white;
+}
+
+.enlaces{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width:500px;
+    list-style: none;
+    padding: 0;
+}
+.enlaces a{
+    text-decoration: none;
+    color: rgb(215, 215, 215);
+    font-size: 16px;
+}
+
+.enlaces a:hover{
+    text-shadow: 0px 0px 10px white;
+    text-decoration: underline;
+    font-weight: 600;   
+    color: white;
+    cursor:pointer;
+}
+
+.RRSS{
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.RRSS a{
+    display: flex;          /* para que la imagen dentro sea flex item */
+    align-items: center;
+    height: 100%;
+    object-fit: contain;
+}
+
+.RRSS img{
+    height: 50%;
+    margin: 0 10px;
+    transition: 0.25s;
+}
+
+.RRSS img:hover{
+    transform: scale(1.2);
+}
