@@ -153,8 +153,8 @@ main {
     border-radius: 10px;
 
     position:absolute;
-    top: 8%;
-    left: 7%;
+    top: 4%;
+    left: 4%;
 }
 
 .pack-info-2 {
@@ -167,7 +167,7 @@ main {
 
     position:absolute;
     top: 8%;
-    right: 7%;
+    right: 4%;
 }
 
 .pack-info-3 {
@@ -178,28 +178,10 @@ main {
     border-radius: 10px;
 
     position:absolute;
-    top: 30%;
-    left: 7%;
+    top: 26%;
+    left: 4%;
 }
 
-.pack-info-button {
-    position:absolute;
-    bottom: 9%;
-    right: 7%;
-
-    background-color: rgba(52, 53, 57, 0.704);
-    border: solid;
-    border-color: rgba(241, 234, 234, 0.6);
-    border-width: 1px;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 10px 15px;
-
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.25s;
-}
 
 .left-content-B{
     background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
@@ -229,14 +211,13 @@ main {
 
 .titulo-compra{
     width: max-content;  /*Hace h1 un inline block*/
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 input[type="text"],
 input[type="mail"],
 input[type="number"],
-input[type="date"],
-.right-content button{
+input[type="date"]{
     width: 80%;
     height: 30px;
     margin-top: 20px;
@@ -252,9 +233,8 @@ input[type="date"],
 
 /*Mirar margen izquierdo*/
 .tarjeta{
-    width: 85%;
+    width: 80%;
     margin-top: 20px;
-    margin-left: 54px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -265,8 +245,8 @@ input[type="date"],
 }
 
 .fecha{
+    width: 80%;
     margin-top: 20px;
-    margin-left: 26px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -279,16 +259,39 @@ input[type="date"],
     border-radius: 10px;
 }
 
-.Comprar-borar{
-    margin-top: 20px;
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.cvv{
+    width: 60%;
+    position: relative;
 }
 
-.Comprar-borar button{
+.cvv input[type="number"]{
+    width: 70%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.comprar-borrar{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.comprar-borrar button{
     width: auto;
+    height: 30px;
+    margin-top: 30px;
+
+    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
+    box-shadow: 3px 3px 6px rgb(17, 17, 17);
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+
+    color: white;
 }
 
 /* FOOTER */
