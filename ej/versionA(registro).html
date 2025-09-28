@@ -3,7 +3,8 @@
     <head>
         <title>Mochileros Sin Fronteras</title>
         <link rel="stylesheet" href="style/versionA.css">
-        <link href="https://db.onlinewebfonts.com/c/a1ab9bebae84d82fbcfe930c4643de7a?family=Cera+CY+Regular" rel="stylesheet">
+        <link rel="icon" type="png" href="images/logo.png">
+        <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel="stylesheet">
     </head>
     <body>
         <header>
@@ -30,20 +31,36 @@
                 </div>
             </div>
         </header>
-        <form>
-            <h1>Registro de nuevos usuarios</h1>
-            <input type="text" name = "nombre" placeholder="Nombre">
-            <input type="mail" name = "mail" placeholder = "Correo electrónico"> <!-- required hace q el campo sea obligatorio  -->
-            <input type="mail" placeholder = "Confirmar correo">
-            <label for="fnacim">Fecha de nacimiento:</label>
-            <input type="date" id = "fnacim">
-            <input type="text" name = "usuario" placeholder = "login">
-            <input type="password" name = "Contraseña" placeholder = "password">
-            <input type="file" placeholder="Examinar...">
-            <input type="checkbox" id="privacidad" name="privacidad" value="acepto">
-            <label for="privacidad">
+        
+        <form class="Registro">
+            <h1 class="titulo-reg">Registro de nuevos usuarios</h1>
+            <div>
+                <input type="text" name = "nombre" placeholder="Nombre">
+                <input type="text" name = "apellidos" placeholder="Apellidos">
+            </div>
+            <div>
+                <input type="mail" name = "mail" placeholder = "Correo electrónico"> <!-- required hace q el campo sea obligatorio  -->
+                <input type="mail" placeholder = "Confirmar correo">
+            </div>
+            <div class="fecha">
+                <label for="fnacim">Fecha de nacimiento:</label>
+                <input type="date" id = "fnacim">
+            </div>
+            <div>
+                <input type="text" name = "usuario" placeholder = "login">
+                <input type="password" name = "Contraseña" placeholder = "password">
+            </div>
+            <div class="fecha">
+                <label for="img-perfil">Subir imagen de imagen de perfil</label>
+                <input type="file" id="img-perfil">
+            </div>
+            
+            <div class="privacidad">
+                <input type="checkbox" id="privacidad" name="privacidad" value="acepto">
+                <label for="privacidad">
                 Acepto la <a href="">Política de privacidad</a>
-            </label>
+                </label>
+            </div>
             <!-- TODO: pegarle una pensada a el botón este-->
             <a href="">Guardar y acceder</a> <!-- Esto será un hipervínculo a la página b-->
         </form>
