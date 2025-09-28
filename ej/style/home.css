@@ -226,7 +226,7 @@ main {
     text-decoration: none;
     padding: 10px 15px;
 
-    color: rgba(255, 255, 255, 0.6);
+    color: rgb(255, 255, 255);
     font-size: 30px;
     cursor: pointer;
     transition: 0.25s;
@@ -266,11 +266,117 @@ main {
 
 }
 
+/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
 
 .left-content-B {
-    background-color: rgb(255, 244, 127);
+    background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
+    border-radius: 10px;
+    box-shadow: 7px 7px 14px rgb(17, 17, 17);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.tarjetas-titulo {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size:22px;
+    color: rgb(255, 255, 255);
+    font-weight: 900;   
 
 }
+
+.tarjetas-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    height:75%;
+    margin-left: 20px;
+    margin-right:20px;
+}
+.tarjetas-container div {
+    position: relative;
+
+    background-image: repeating-linear-gradient(45deg, rgb(55, 55, 60) 0px, rgb(55, 55, 60) 10px, rgb(45, 45, 50) 10px, rgb(45, 45, 50) 20px); 
+    border-radius: 10px;
+    box-shadow: 7px 7px 14px rgb(25, 25, 30);
+}
+
+.tarjetas-container p {
+    margin:0;
+    position:absolute;
+    top: 6%;
+    left: 4%;
+    font-size:20px;
+
+    color: rgb(255, 255, 255);
+    font-weight: 900;   
+}
+
+.tarjetas-container img {
+    height:130px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+
+    position:absolute;
+    bottom: 5%;
+    left: 3%;
+}
+
+
+.heart-icon {
+    position:absolute;
+    height:50px;
+    top: 30%;
+    right: 13%;
+    text-decoration: none;
+    font-size: 50px;
+    color:rgb(30, 30, 32);
+    padding:0; 
+    transition: 0.25s;
+
+
+}
+
+.heart-icon:hover {
+    color:rgb(255, 0, 0);
+
+}
+
+.tarjeta-button {
+    position:absolute;
+    bottom: 5%;
+    right: 7%;
+
+    background-color: rgba(52, 53, 57, 0.704);
+    border: solid;
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px 15px;
+
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.tarjeta-button:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+    border-color: white;
+}
+
+
+
+
+
+
 
 
 .right-content{
