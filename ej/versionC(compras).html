@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mochileros Sin Fronteras</title>
+        <link rel="stylesheet" href="style/versionC.css">
+        <link rel="icon" type="png" href="images/logo.png">
+        <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class = "titulo-web">Mochileros Sin Fronteras</div>
+
+            <div class = "menu-nav">
+                <div><a href="https://www.uc3m.es/Inicio" target="_blank">Inicio</a></div>
+                <div><a href="https://www.uc3m.es/Inicio" target="_blank">Experiencias</a></div>
+                <div><a href="https://www.uc3m.es/Inicio" target="_blank">Consejos</a></div>
+                <div><a href="https://www.uc3m.es/Inicio" target="_blank">Foros</a></div>
+                <div><a href="https://www.uc3m.es/Inicio" target="_blank">Contacto</a></div>
+            </div>
+
+            <div class = "logo-idioma">
+                <div><img src="images/logo.png"></div>
+                <div>
+                    <select>
+                        <option>Español</option>
+                        <option>Inglés</option>
+                        <option>Francés</option>
+                        <option>Alemán</option>
+                        <option>Catalán</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="left-content">
+                <div class = "left-content-A">
+                    <img src="images/img_pack.jpg">
+                    <div class = "pack-info-1">Pack Sudesde Asiático</div>
+                    <div class = "pack-info-2">600€</div>
+                    <div class = "pack-info-3">Indonesia: buses, hostales y guia de visados</div>
+                    <a href = "https://www.filmaffinity.com/es/film133037.html" target = "_blank" class = "pack-info-button">Comprar</a>
+                </div>
+                <div class="left-content-B">
+                    <h2>Descripcion pack:</h2>
+                </div>
+            </div>
+
+
+
+            <form class="right-content">
+                
+                <h1 class="titulo-compra">Formulario de compra</h1>
+                <input type="text" name = "nombre" placeholder="Nombre completo">
+                <input type="mail" name = "mail" placeholder = "Correo electrónico">
+                <div class="tarjeta">
+                    <label for="tipo-tarjeta">Tipo de tarjeta</label>
+                    <select id="tipo-tarjeta">
+                        <option>Visa</option>
+                        <option>Mastercard</option>
+                        <option>American Express</option>
+                    </select>
+                </div>
+                <input type="number" name = "tarjeta" placeholder="Número de tarjeta">
+                <input type="text" name = "nombre_titular" placeholder="Nombre del titular de la tarjeta">
+                <div class="fecha">
+                    <div>
+                        <label for="fcad">Fecha de caducidad</label>
+                        <input type="date" id = "fcad">
+                    </div>
+                    <div>
+                        <input type="number" name="CVV" placeholder="Código CVV">
+                    </div>
+                </div>
+                <div class="Comprar-borrar">
+                    <button>Comprar</button><!-- Esto será un hipervínculo a la página b-->
+                    <button>Borar</button>
+                </div>
+
+            </form>
+
+        </main>
+        <footer>
+            <div class="copy">
+                &#169; 2025 Mochileros Sin Fronteras
+            </div>
+            <ul class="enlaces">
+                <li><a href="https://www.uc3m.es/Inicio" target="_blank">Sobre nosotros</a></li>
+                <li><a href="https://www.uc3m.es/Inicio" target="_blank">Política de privacidad</a></li>
+                <li><a href="https://www.uc3m.es/Inicio" target="_blank">Ayuda</a></li>
+            </ul>
+            <div class="RRSS">
+                <a href="https://www.instagram.com/universidadcarlosiiidemadrid" target="_blank">
+                    <img src="images/Instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/@uc3m.uni" target="_blank">
+                    <img src="images/TikTok.png" alt="Tiktok">
+                </a>
+                <a href="https://www.youtube.com/@UC3M" target="_blank">
+                    <img src="images/YouTube.png" alt="Youtube" class="YT-logo">
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>

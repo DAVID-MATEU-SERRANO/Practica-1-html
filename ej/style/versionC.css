@@ -1,17 +1,9 @@
-html{
-    height: 100%;
-}
+
 
 body {
     background: radial-gradient(circle at top, rgb(79, 81, 87),rgba(27, 28, 33));
     font-family: 'Poppins';
     color: white; 
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    height: 100%;
-    margin: 0;
-
 }
 
 
@@ -98,7 +90,8 @@ header {
     transform: scale(1.2);
 }
 
-.logo-idioma select {
+.logo-idioma select,
+.right-content select {
     width: 90px;
     height: 30px;
     background-color: rgb(215, 215, 215);
@@ -113,14 +106,117 @@ header {
 }
 
 /* MAIN */
-/*AAAAAAAAAAAA ns si tienen mucho sentido los margenes pesar sobre eso*/
-form {
-    width: 700px;
-    margin-top:210px;
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 15px;
+
+    margin-top: 130px;
     margin-right: 30px;
     margin-left: 30px;
     margin-bottom:210px;
 
+}
+
+.left-content{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    row-gap: 15px;
+}
+.left-content-A {
+    background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
+    border-radius: 10px;
+    box-shadow: 7px 7px 14px rgb(17, 17, 17);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+
+    overflow: hidden; /*Oculta la parte de imagen que sobresale*/
+}
+
+.left-content-A img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Conserva relación de aspecto de la imagen y cubre todo el espacio*/
+}
+
+.pack-info-1 {
+    color: rgb(255, 255, 255);
+    background-color: rgba(52, 53, 57, 0.704);
+    font-weight: 900;   
+    font-size: 20px;
+    padding: 6px 6px; 
+    border-radius: 10px;
+
+    position:absolute;
+    top: 8%;
+    left: 7%;
+}
+
+.pack-info-2 {
+    color: rgb(255, 255, 255);
+    background-color: rgba(52, 53, 57, 0.704);
+    font-weight: 900;   
+    font-size: 20px;
+    padding: 6px 6px; 
+    border-radius: 10px;
+
+    position:absolute;
+    top: 8%;
+    right: 7%;
+}
+
+.pack-info-3 {
+    color: rgb(255, 255, 255);
+    background-color: rgba(52, 53, 57, 0.704);
+    font-size: 13px;
+    padding: 6px 6px; 
+    border-radius: 10px;
+
+    position:absolute;
+    top: 30%;
+    left: 7%;
+}
+
+.pack-info-button {
+    position:absolute;
+    bottom: 9%;
+    right: 7%;
+
+    background-color: rgba(52, 53, 57, 0.704);
+    border: solid;
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px 15px;
+
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.left-content-B{
+    background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
+    border-radius: 10px;
+    box-shadow: 7px 7px 14px rgb(17, 17, 17); 
+}
+
+.left-content-B h2{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size:22px;
+    color: rgb(255, 255, 255);
+    font-weight: 900;   
+}
+
+.right-content{
     background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
     border-radius: 10px;
     box-shadow: 7px 7px 14px rgb(17, 17, 17); 
@@ -131,22 +227,17 @@ form {
     align-items: center;
 }
 
-.titulo-reg{
+.titulo-compra{
     width: max-content;  /*Hace h1 un inline block*/
-}
-
-
-form div{
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
+    margin-bottom: 0px;
 }
 
 input[type="text"],
 input[type="mail"],
-input[type="password"],
-input[type="date"]{
-    width: 45%;
+input[type="number"],
+input[type="date"],
+.right-content button{
+    width: 80%;
     height: 30px;
     margin-top: 20px;
 
@@ -159,12 +250,26 @@ input[type="date"]{
     color: white;
 }
 
+/*Mirar margen izquierdo*/
+.tarjeta{
+    width: 85%;
+    margin-top: 20px;
+    margin-left: 54px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#tipo-tarjeta{
+    margin-top: 10px;
+}
+
 .fecha{
     margin-top: 20px;
     margin-left: 26px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .fecha input[type="date"]{
@@ -174,54 +279,17 @@ input[type="date"]{
     border-radius: 10px;
 }
 
-.fecha input[type= "file"]{
-    height: 30px;
-    width: 60%;
+.Comprar-borar{
     margin-top: 20px;
-}
-
-.privacidad{
-    margin-top: 20px;
-    margin-left: 15px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.privacidad input [type="checkbox"]{
-    background-color: gray;
-    border-color: rgba(241, 234, 234, 0.6);
-    border-width: 1px;
-    border-radius: 10px;
-}
-
-.privacidad a,
-.Guardar-boton a{
-    color: white;
-    text-decoration: none;
-}
-
-.Guardar{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 28px;
-    display: flex;
-    justify-content: flex-end;
-
     
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.Guardar-boton{
-    height: 30px;
-    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
-    box-shadow: 3px 3px 6px rgb(17, 17, 17);
-
-    border-color: rgba(241, 234, 234, 0.6);
-    border-width: 1px;
-    border-radius: 10px;
+.Comprar-borar button{
+    width: auto;
 }
-
-
-
 
 /* FOOTER */
 
