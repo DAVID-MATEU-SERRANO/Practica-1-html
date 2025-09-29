@@ -373,14 +373,10 @@ main {
 }
 
 
-
-
-
-
-
-
-.right-content{
-    background-color: rgb(236, 127, 255);
+aside {
+    background-image: repeating-linear-gradient(45deg, rgb(25, 25, 28) 0px, rgb(25, 25, 28) 10px, rgb(20, 20, 23) 10px, rgb(20, 20, 23) 20px); 
+    border-radius: 10px;
+    box-shadow: 7px 7px 14px rgb(15, 15, 17);
 }
 
 
