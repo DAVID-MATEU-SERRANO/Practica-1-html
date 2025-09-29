@@ -353,3 +353,24 @@ footer{
     transform: scale(1.2);
 }
 
+
+
+/*VERSIÓN RESPONSIVE*/
+
+@media only screen and (max-width: 600px) {
+    .paralelo {
+    flex-direction: column;
+    }
+    .titulo-reg{
+        font-size:25px;
+    }
+    input[type="text"],
+    input[type="mail"],
+    input[type="password"],
+    input[type="date"]{
+        width: auto;
+    }
+    .fecha{
+        margin-left: 0px;
+    }
+}
