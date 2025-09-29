@@ -1,7 +1,14 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
 body {
     background: radial-gradient(circle at top, rgb(79, 81, 87),rgba(27, 28, 33));
     font-family: 'Poppins';    
 }
+
 
 /* HEADER */
 
@@ -25,47 +32,51 @@ header {
 
 }
 
-.titulo-web {
-    display:flex;
-    justify-content: center;
-    width: 270px;
-    margin-left:20px;
+header h1 {
+    text-align: center;
+    width: 320px;
 
     font-weight: 900;   
-    font-size: 21px;
+    font-size: 22px;
     color: white;
-    white-space: nowrap;
 
     transition: 0.25s;
 
 }
 
-.titulo-web:hover {
+header h1:hover {
     text-shadow: 0px 0px 10px white;
-    font-size: 22px;
+    font-size: 23px;
     color: white;
 }
 
-.menu-nav {
+
+header ul {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-flow: row wrap;
     align-items: center;
-    width:  500px;
+    width:  470px;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
     transition: 0.25s;
+
 }
 
-.menu-nav a{
+header a{
     text-decoration: none;
     color: rgb(215, 215, 215);
     font-size: 16px;
 }
 
-.menu-nav div:hover{
+header a:hover{
+    color: white;
     text-shadow: 0px 0px 10px white;
     text-decoration: underline;
-    font-weight: 600;   
-    color: white;
     cursor:pointer;
 }
 
@@ -111,10 +122,7 @@ main {
     margin-top: 130px;
     margin-right: 30px;
     margin-left: 30px;
-    margin-bottom:210px;
-
-    height:1000px;
-
+    margin-bottom:130px;
 }
 
 .left-content {
@@ -131,9 +139,10 @@ main {
 }
 
 .left-content-A_1 {
-    height: 130px;
     position: relative;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 .left-content-A_1 img {
@@ -149,7 +158,6 @@ main {
 .left-content-A_1 img:hover {
     filter: blur(0px);
     transition: 0.25s;
-
 }
 
 
@@ -157,11 +165,10 @@ main {
     color: white;
     font-weight: 900; 
     font-size: 24px;  
-    white-space: nowrap;
     position:absolute;
-    bottom: 40%;
-    right: 25%;
+    text-align: center;
 }
+
 
 .left-content-A_2 {
     background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
@@ -171,52 +178,58 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;    
+}
+
+.pack-info {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pack-info-1 {
     color: rgb(255, 255, 255);
     background-color: rgba(52, 53, 57, 0.704);
     font-weight: 900;   
-    font-size: 30px;
+    font-size: 25px;
     padding: 6px 6px; 
     border-radius: 10px;
 
     position:absolute;
-    top: 8%;
-    left: 8%;
+    top: 2%;
+    left: 1%;
 }
 
 .pack-info-2 {
     color: rgb(255, 255, 255);
     background-color: rgba(52, 53, 57, 0.704);
     font-weight: 900;   
-    font-size: 30px;
-    padding: 6px 6px; 
-    border-radius: 10px;
-
-    position:absolute;
-    top: 8%;
-    right: 8%;
-}
-
-.pack-info-3 {
-    color: rgb(255, 255, 255);
-    background-color: rgba(52, 53, 57, 0.704);
     font-size: 25px;
     padding: 6px 6px; 
     border-radius: 10px;
 
     position:absolute;
-    top: 23%;
-    left: 8%;
+    top: 2%;
+    right: 1%;
+}
+
+.pack-info-3 {
+    color: rgb(255, 255, 255);
+    background-color: rgba(52, 53, 57, 0.704);
+    font-size: 20px;
+    padding: 6px 6px; 
+    border-radius: 10px;
+
+    position:absolute;
+    top: 27%;
+    left: 1%;
 }
 
 .pack-info-button {
     position:absolute;
-    bottom: 9%;
-    right: 8%;
+    bottom: 4%;
+    right: 1%;
 
     background-color: rgba(52, 53, 57, 0.704);
     border: solid;
@@ -227,16 +240,15 @@ main {
     padding: 10px 15px;
 
     color: rgb(255, 255, 255);
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
-    transition: 0.25s;
-    
+    transition: 0.25s; 
 }
 
 
 .left-content-A_2 img {
-    height: 350px;
-    width: 1050px;
+    height: 100%;
+    width: 100%;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
  
@@ -252,8 +264,6 @@ main {
     color: rgba(255, 255, 255, 0.6);
     font-size: 30px;
     cursor: pointer;
-    margin-right: 20px;
-    margin-left:20px;
     transition: 0.25s;
 }
 
@@ -282,8 +292,9 @@ main {
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
-    font-size:22px;
+    font-size:23px;
     color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
     font-weight: 900;   
 
 }
@@ -297,6 +308,7 @@ main {
     margin-left: 20px;
     margin-right:20px;
 }
+
 .tarjetas-container div {
     position: relative;
 
@@ -308,17 +320,17 @@ main {
 .tarjetas-container p {
     margin:0;
     position:absolute;
-    top: 6%;
+    top: 8%;
     left: 4%;
-    font-size:20px;
-
+    font-size:17px;
+    white-space: nowrap;
     color: rgb(255, 255, 255);
     font-weight: 900;   
 }
 
 .tarjetas-container img {
-    height:130px;
-    width: 220px;
+    height:67%;
+    width: 60%;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
 
@@ -338,8 +350,6 @@ main {
     color:rgb(30, 30, 32);
     padding:0; 
     transition: 0.25s;
-
-
 }
 
 .heart-icon:hover {
@@ -372,11 +382,48 @@ main {
     border-color: white;
 }
 
+/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAx2*/
 
 aside {
     background-image: repeating-linear-gradient(45deg, rgb(25, 25, 28) 0px, rgb(25, 25, 28) 10px, rgb(20, 20, 23) 10px, rgb(20, 20, 23) 20px); 
     border-radius: 10px;
     box-shadow: 7px 7px 14px rgb(15, 15, 17);
+
+    display: grid;
+    grid-template-rows: 2fr 5fr;
+}
+
+form {
+    background-color: aqua;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+input[type = "text"] {
+    width: 45%;
+    height: 30px;
+
+    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
+    box-shadow: 3px 3px 6px rgb(17, 17, 17);
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+
+    color: white;
+}
+
+.recordar-credenciales {
+    background-color: rgb(180, 119, 237);
+}
+
+
+.extra-info {
+    background-color: rgb(91, 248, 167);
+
+
 }
 
 
@@ -469,4 +516,30 @@ footer{
 
 .RRSS img:hover{
     transform: scale(1.2);
+}
+
+/* MEDIA QUERIES*/
+
+@media only screen and (max-width: 1060px) {
+    body {
+        background: rgb(230, 173, 173);
+    }
+
+    /*HEADER*/
+    /*MAIN*/
+
+}
+
+
+@media only screen and (max-width: 768px) {
+  body {
+    background: lightblue;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background: rgb(159, 246, 169);
+  }
 }
