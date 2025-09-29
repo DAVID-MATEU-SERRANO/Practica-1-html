@@ -143,6 +143,13 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover; /*Conserva relación de aspecto de la imagen y cubre todo el espacio*/
+
+    filter: blur(2px);
+}
+.left-content-A img:hover {
+    filter: blur(0px);
+    transition: 0.25s;
+
 }
 
 .pack-info-1 {
@@ -167,7 +174,7 @@ main {
     border-radius: 10px;
 
     position:absolute;
-    top: 4%;
+    bottom:  4%;
     right: 4%;
 }
 
@@ -197,6 +204,10 @@ main {
     font-size:22px;
     color: rgb(255, 255, 255);
     font-weight: 900;   
+}
+
+.left-content-B p{
+    padding: 20px;
 }
 
 .right-content{
@@ -262,6 +273,7 @@ input[type="date"]{
 
 .cvv{
     width: 60%;
+    height: 100%;
     position: relative;
 }
 
@@ -286,13 +298,22 @@ input[type="date"]{
     height: 30px;
     margin-top: 30px;
 
-    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
-    box-shadow: 3px 3px 6px rgb(17, 17, 17);
+    background-color: rgba(52, 53, 57, 0.704);
+    border: solid;
     border-color: rgba(241, 234, 234, 0.6);
     border-width: 1px;
     border-radius: 10px;
+    text-decoration: none;
 
     color: white;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.comprar-borrar button:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+    border-color: white;
 }
 
 /* FOOTER */
@@ -353,6 +374,52 @@ footer{
     cursor:pointer;
 }
 
+.newsletter{
+    width: 340px;
+    height: 36;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter input[type="mail"]{
+    height: 30px;
+    margin-top: 0px;
+    width: 53%;
+
+    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
+    box-shadow: 3px 3px 6px rgb(17, 17, 17);
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+    
+
+    color: white;
+}
+
+
+.newsletter button{
+    height: 100%;
+    width: 120px;
+
+    background-color: rgba(52, 53, 57, 0.704);
+    border: solid;
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 6px 0px;
+
+    color: white;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+    border-color: white;
+}
+
 .RRSS{
     height: 90px;
     display: flex;
@@ -378,3 +445,35 @@ footer{
     transform: scale(1.2);
 }
 
+
+/*VERSIÓN RESPONSIVE*/
+
+
+@media only screen and (max-width: 768px) {
+    main {
+    grid-template-columns: 1fr;
+    }
+
+    .left-content{
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .fecha{
+        flex-direction: column;
+    }
+    .fecha input[type="date"]{
+        width: 100%;
+    }
+    .cvv{
+        height: 60px;
+        width: 100%;
+    }
+    .cvv input[type="number"]{
+        width: 100%;
+        left: 0px;
+        right: 0px;
+    }
+}
