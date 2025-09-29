@@ -174,7 +174,7 @@ main {
     border-radius: 10px;
 
     position:absolute;
-    top: 4%;
+    bottom:  4%;
     right: 4%;
 }
 
@@ -204,6 +204,10 @@ main {
     font-size:22px;
     color: rgb(255, 255, 255);
     font-weight: 900;   
+}
+
+.left-content-B p{
+    padding: 20px;
 }
 
 .right-content{
@@ -269,6 +273,7 @@ input[type="date"]{
 
 .cvv{
     width: 60%;
+    height: 100%;
     position: relative;
 }
 
@@ -440,3 +445,35 @@ footer{
     transform: scale(1.2);
 }
 
+
+/*VERSIÓN RESPONSIVE*/
+
+
+@media only screen and (max-width: 768px) {
+    main {
+    grid-template-columns: 1fr;
+    }
+
+    .left-content{
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .fecha{
+        flex-direction: column;
+    }
+    .fecha input[type="date"]{
+        width: 100%;
+    }
+    .cvv{
+        height: 60px;
+        width: 100%;
+    }
+    .cvv input[type="number"]{
+        width: 100%;
+        left: 0px;
+        right: 0px;
+    }
+}
