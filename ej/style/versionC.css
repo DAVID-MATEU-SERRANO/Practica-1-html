@@ -1,7 +1,11 @@
+
+
 body {
     background: radial-gradient(circle at top, rgb(79, 81, 87),rgba(27, 28, 33));
-    font-family: 'Poppins';    
+    font-family: 'Poppins';
+    color: white; 
 }
+
 
 /* HEADER */
 
@@ -51,8 +55,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width:  500px;
-    transition: 0.25s;
+    width:500px;
 }
 
 .menu-nav a{
@@ -87,7 +90,8 @@ header {
     transform: scale(1.2);
 }
 
-.logo-idioma select {
+.logo-idioma select,
+.right-content select {
     width: 90px;
     height: 30px;
     background-color: rgb(215, 215, 215);
@@ -105,7 +109,7 @@ header {
 
 main {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
     column-gap: 15px;
 
     margin-top: 130px;
@@ -113,280 +117,183 @@ main {
     margin-left: 30px;
     margin-bottom:210px;
 
-    height:1000px;
-
 }
 
-.left-content {
+.left-content{
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
     row-gap: 15px;
-
 }
-
 .left-content-A {
-    display: grid;
-    grid-template-rows: 1fr 3fr;
-    row-gap: 15px;
-}
-
-.left-content-A_1 {
-    height: 130px;
-    position: relative;
-    
-}
-
-.left-content-A_1 img {
-    width: 100%;
-    height: 100%; 
-    object-fit: cover; 
-    border-radius: 10px;
-    filter: blur(2px);
-    box-shadow: 7px 7px 14px rgb(17, 17, 17);
-
-}
-
-.left-content-A_1 img:hover {
-    filter: blur(0px);
-    transition: 0.25s;
-
-}
-
-
-.left-content-A_1 div {
-    color: white;
-    font-weight: 900; 
-    font-size: 24px;  
-    white-space: nowrap;
-    position:absolute;
-    bottom: 40%;
-    right: 25%;
-}
-
-.left-content-A_2 {
     background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
     border-radius: 10px;
     box-shadow: 7px 7px 14px rgb(17, 17, 17);
+    height: 220px;
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     position: relative;
+
+    overflow: hidden; /*Oculta la parte de imagen que sobresale*/
+}
+
+.left-content-A img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Conserva relación de aspecto de la imagen y cubre todo el espacio*/
 }
 
 .pack-info-1 {
     color: rgb(255, 255, 255);
     background-color: rgba(52, 53, 57, 0.704);
     font-weight: 900;   
-    font-size: 30px;
+    font-size: 20px;
     padding: 6px 6px; 
     border-radius: 10px;
 
     position:absolute;
-    top: 8%;
-    left: 8%;
+    top: 4%;
+    left: 4%;
 }
 
 .pack-info-2 {
     color: rgb(255, 255, 255);
     background-color: rgba(52, 53, 57, 0.704);
     font-weight: 900;   
-    font-size: 30px;
+    font-size: 20px;
     padding: 6px 6px; 
     border-radius: 10px;
 
     position:absolute;
-    top: 8%;
-    right: 8%;
+    top: 4%;
+    right: 4%;
 }
 
 .pack-info-3 {
     color: rgb(255, 255, 255);
     background-color: rgba(52, 53, 57, 0.704);
-    font-size: 25px;
+    font-size: 13px;
     padding: 6px 6px; 
     border-radius: 10px;
 
     position:absolute;
     top: 23%;
-    left: 8%;
-}
-
-.pack-info-button {
-    position:absolute;
-    bottom: 9%;
-    right: 8%;
-
-    background-color: rgba(52, 53, 57, 0.704);
-    border: solid;
-    border-color: rgba(241, 234, 234, 0.6);
-    border-width: 1px;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 10px 15px;
-
-    color: rgb(255, 255, 255);
-    font-size: 30px;
-    cursor: pointer;
-    transition: 0.25s;
-    
+    left: 4%;
 }
 
 
-.left-content-A_2 img {
-    height: 350px;
-    width: 1050px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
- 
-}
-
-.nav-button-1, .nav-button-2 {
-    background-color: transparent;
-    border: solid;
-    border-color: rgba(241, 234, 234, 0.6);
-    border-width: 1px;
-    border-radius: 10px;
-
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 30px;
-    cursor: pointer;
-    margin-right: 20px;
-    margin-left:20px;
-    transition: 0.25s;
-}
-
-
-
-.left-content-A_2 button:hover,  .left-content-A_2 a:hover{
-    text-shadow: 0px 0px 10px white;
-    color: white;
-    border-color: white;
-
-}
-
-/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
-
-.left-content-B {
+.left-content-B{
     background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
     border-radius: 10px;
-    box-shadow: 7px 7px 14px rgb(17, 17, 17);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    box-shadow: 7px 7px 14px rgb(17, 17, 17); 
 }
 
-.tarjetas-titulo {
+.left-content-B h2{
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
     font-size:22px;
     color: rgb(255, 255, 255);
     font-weight: 900;   
-
 }
 
-.tarjetas-container {
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 20px;
-    height:75%;
-    margin-left: 20px;
-    margin-right:20px;
-}
-.tarjetas-container div {
-    position: relative;
-
-    background-image: repeating-linear-gradient(45deg, rgb(55, 55, 60) 0px, rgb(55, 55, 60) 10px, rgb(45, 45, 50) 10px, rgb(45, 45, 50) 20px); 
+.right-content{
+    background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
     border-radius: 10px;
-    box-shadow: 7px 7px 14px rgb(25, 25, 30);
+    box-shadow: 7px 7px 14px rgb(17, 17, 17); 
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.tarjetas-container p {
-    margin:0;
-    position:absolute;
-    top: 6%;
-    left: 4%;
-    font-size:20px;
-
-    color: rgb(255, 255, 255);
-    font-weight: 900;   
+.titulo-compra{
+    width: max-content;  /*Hace h1 un inline block*/
+    margin-bottom: 10px;
 }
 
-.tarjetas-container img {
-    height:130px;
-    width: 220px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+input[type="text"],
+input[type="mail"],
+input[type="number"],
+input[type="date"]{
+    width: 80%;
+    height: 30px;
+    margin-top: 20px;
 
-    position:absolute;
-    bottom: 5%;
-    left: 3%;
-}
-
-
-.heart-icon {
-    position:absolute;
-    height:50px;
-    top: 30%;
-    right: 13%;
-    text-decoration: none;
-    font-size: 50px;
-    color:rgb(30, 30, 32);
-    padding:0; 
-    transition: 0.25s;
-
-
-}
-
-.heart-icon:hover {
-    color:rgb(255, 0, 0);
-
-}
-
-.tarjeta-button {
-    position:absolute;
-    bottom: 5%;
-    right: 7%;
-
-    background-color: rgba(52, 53, 57, 0.704);
-    border: solid;
+    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
+    box-shadow: 3px 3px 6px rgb(17, 17, 17);
     border-color: rgba(241, 234, 234, 0.6);
     border-width: 1px;
     border-radius: 10px;
-    text-decoration: none;
-    padding: 10px 15px;
 
-    color: rgb(255, 255, 255);
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-.tarjeta-button:hover {
-    text-shadow: 0px 0px 10px white;
     color: white;
-    border-color: white;
 }
 
+/*Mirar margen izquierdo*/
+.tarjeta{
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 
-aside {
-    background-image: repeating-linear-gradient(45deg, rgb(25, 25, 28) 0px, rgb(25, 25, 28) 10px, rgb(20, 20, 23) 10px, rgb(20, 20, 23) 20px); 
+#tipo-tarjeta{
+    margin-top: 10px;
+}
+
+.fecha{
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fecha input[type="date"]{
+    color: gray;
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
     border-radius: 10px;
-    box-shadow: 7px 7px 14px rgb(15, 15, 17);
 }
 
+.cvv{
+    width: 60%;
+    position: relative;
+}
 
+.cvv input[type="number"]{
+    width: 70%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
 
+.comprar-borrar{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
+.comprar-borrar button{
+    width: auto;
+    height: 30px;
+    margin-top: 30px;
 
+    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
+    box-shadow: 3px 3px 6px rgb(17, 17, 17);
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
 
-
-
-
+    color: white;
+}
 
 /* FOOTER */
 
@@ -455,7 +362,7 @@ footer{
 }
 
 .RRSS a{
-    display: flex;          /* para que la imagen dentro sea flex item */
+    display: flex;
     align-items: center;
     height: 100%;
     object-fit: contain;
@@ -470,3 +377,4 @@ footer{
 .RRSS img:hover{
     transform: scale(1.2);
 }
+

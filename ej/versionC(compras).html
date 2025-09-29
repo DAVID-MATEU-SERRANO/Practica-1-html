@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Mochileros Sin Fronteras</title>
-        <link rel="stylesheet" href="style/versionA.css">
+        <link rel="stylesheet" href="style/versionC.css">
         <link rel="icon" type="png" href="images/logo.png">
         <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel="stylesheet">
     </head>
@@ -31,40 +31,53 @@
                 </div>
             </div>
         </header>
-        <form class="Registro">
-            <h1 class="titulo-reg">Registro de nuevos usuarios</h1>
-            <div>
-                <input type="text" name = "nombre" placeholder="Nombre">
-                <input type="text" name = "apellidos" placeholder="Apellidos">
+        <main>
+            <div class="left-content">
+                <div class = "left-content-A">
+                    <img src="images/img_pack.jpg">
+                    <div class = "pack-info-1">Pack Sudesde Asiático</div>
+                    <div class = "pack-info-2">600€</div>
+                    <div class = "pack-info-3">Indonesia: buses, hostales y guia de visados</div>
+                </div>
+                <div class="left-content-B">
+                    <h2>Descripcion pack:</h2>
+                </div>
             </div>
-            <div>
-                <input type="mail" name = "mail" placeholder = "Correo electrónico"> <!-- required hace q el campo sea obligatorio  -->
-                <input type="mail" placeholder = "Confirmar correo">
-            </div>
-            <div class="fecha">
-                <label for="fnacim">Fecha de nacimiento:</label>
-                <input type="date" id = "fnacim">
-            </div>
-            <div>
-                <input type="text" name = "usuario" placeholder = "login">
-                <input type="password" name = "Contraseña" placeholder = "password">
-            </div>
-            <div class="fecha">
-                <label for="img-perfil">Subir imagen de imagen de perfil</label>
-                <input type="file" id="img-perfil">
-            </div>
-            
-            <div class="privacidad">
-                <input type="checkbox" id="privacidad" name="privacidad" value="acepto">
-                <label for="privacidad">
-                Acepto la <a href="">Política de privacidad</a>
-                </label>
-            </div>
-            <div class="Guardar">
-                <button class="Guardar-boton"><a href="https://doncelcp.es/" target="_blank">Guardar datos y acceder</a></button><!-- Esto será un hipervínculo a la página b-->
-            </div>
-            
-        </form>
+
+
+
+            <form class="right-content">
+                
+                <h1 class="titulo-compra">Formulario de compra</h1>
+                <input type="text" name = "nombre" placeholder="Nombre completo">
+                <input type="mail" name = "mail" placeholder = "Correo electrónico">
+                <div class="tarjeta">
+                    <label for="tipo-tarjeta">Tipo de tarjeta</label>
+                    <select id="tipo-tarjeta">
+                        <option>Visa</option>
+                        <option>Mastercard</option>
+                        <option>American Express</option>
+                    </select>
+                </div>
+                <input type="number" name = "tarjeta" placeholder="Número de tarjeta">
+                <input type="text" name = "nombre_titular" placeholder="Nombre del titular de la tarjeta">
+                <div class="fecha">
+                    <div>
+                        <label for="fcad">Fecha de caducidad</label>
+                        <input type="date" id = "fcad">
+                    </div>
+                    <div class="cvv">
+                        <input type="number" name="CVV" placeholder="Código CVV">
+                    </div>
+                </div>
+                <div class="comprar-borrar">
+                    <button>Comprar</button><!-- Esto será un hipervínculo a la página b-->
+                    <button>Borar</button>
+                </div>
+
+            </form>
+
+        </main>
         <footer>
             <div class="copy">
                 &#169; 2025 Mochileros Sin Fronteras
