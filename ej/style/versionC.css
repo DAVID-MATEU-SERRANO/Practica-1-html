@@ -392,6 +392,7 @@ footer{
     text-decoration: none;
     color: rgb(215, 215, 215);
     font-size: 16px;
+    transition: 0.25s;
 }
 
 .enlaces a:hover{

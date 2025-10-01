@@ -403,7 +403,7 @@ main {
 
 aside {
     display: grid;
-    grid-template-rows: 1fr 1.5fr 1.5fr 1.5fr 1.5fr;
+    grid-template-rows: 1fr 1.5fr 1.5fr 1fr 1.5fr;
     row-gap: 15px;
 }
 
@@ -426,7 +426,6 @@ aside {
     color: rgb(255, 255, 255);
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
     font-weight: 900; 
-    transition: 0.25s;
 }
 
 .pfp-container {
@@ -472,30 +471,214 @@ aside {
     border-color: white;
 }
 
-
+/**/
 
 .buscador{
     background-image: repeating-linear-gradient(45deg, rgb(25, 25, 28) 0px, rgb(25, 25, 28) 10px, rgb(20, 20, 23) 10px, rgb(20, 20, 23) 20px); 
     border-radius: 10px;
     box-shadow: 7px 7px 14px rgb(15, 15, 17);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.buscador p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+
+    font-size:24px; 
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
+    font-weight: 900; 
+}
+
+.buscador-destinos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 100px;
+    row-gap: 50px;
+
+    color: rgb(255, 255, 255);
+    font-size: 21px;
+}
+
+.buscador-search div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position:relative;
+}
+
+
+.buscador-search input[type = "search"] {
+    width: 70%;
+    height: 45%;
+
+    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
+    box-shadow: 3px 3px 6px rgb(17, 17, 17);
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+    color: white;
+    font-size: 23px;
+
+    padding-left: 40px;
+}
+
+.buscador-search img {
+    height: 70%;
+    width: 7%;
+    position: absolute;
+    left: 18%;
+    bottom: 15%;
+}
+
+
+/**/
 
 .consejos {
     background-image: repeating-linear-gradient(45deg, rgb(25, 25, 28) 0px, rgb(25, 25, 28) 10px, rgb(20, 20, 23) 10px, rgb(20, 20, 23) 20px); 
     border-radius: 10px;
     box-shadow: 7px 7px 14px rgb(15, 15, 17);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.consejos p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+
+    font-size:24px; 
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
+    font-weight: 900; 
+}
+
+.consejos-links {
+    display: flex;
+    margin-left: 40px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.consejos-links a{
+    text-decoration: none;
+    color: rgb(215, 215, 215);
+    font-size: 20px;
+    transition: 0.25s;
+}
+
+.consejos-links a:hover{
+    color: white;
+    text-shadow: 0px 0px 10px white;
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+/**/
 
 .enviar-consejos {
     background-image: repeating-linear-gradient(45deg, rgb(25, 25, 28) 0px, rgb(25, 25, 28) 10px, rgb(20, 20, 23) 10px, rgb(20, 20, 23) 20px); 
     border-radius: 10px;
     box-shadow: 7px 7px 14px rgb(15, 15, 17);
+
+    display:grid;
+    grid-template-rows: 1fr 3fr;
+
 }
 
+.enviar-consejos p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+
+    font-size:24px; 
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
+    font-weight: 900; 
+}
+
+.enviar-consejos form {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.enviar-consejos div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.enviar-consejos input[type = "text"] {
+    width: 70%;
+    height: 50%;
+
+    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
+    box-shadow: 3px 3px 6px rgb(17, 17, 17);
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+    color: white;
+    font-size: 23px;
+}
+
+
+.enviar-consejos input[placeholder="Título del consejo"] {
+    margin-right: 43%;
+    width: 50%;
+}
+
+.enviar-consejos button {
+    background-color: transparent;
+    border: solid;
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+/**/
 .calendario {
     background-image: repeating-linear-gradient(45deg, rgb(25, 25, 28) 0px, rgb(25, 25, 28) 10px, rgb(20, 20, 23) 10px, rgb(20, 20, 23) 20px); 
     border-radius: 10px;
     box-shadow: 7px 7px 14px rgb(15, 15, 17);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendario img {
+    height: 80%;
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
 }
 
 
@@ -595,8 +778,12 @@ footer{
     }
 
     .left-content {
-        display: grid;
         grid-template-rows: 1fr 2fr;
+        row-gap: 15px;
+    }
+
+    aside {
+        grid-template-rows: 0.5fr 1.5fr 1.5fr 1fr 1fr;
         row-gap: 15px;
     }
 }
@@ -612,6 +799,15 @@ footer{
         grid-template-rows: 1fr 0.7fr;
 
     }
+
+    aside {
+            display: grid;
+            grid-template-rows: 1fr 1.5fr 1.5fr 1fr 1.5fr;
+            row-gap: 15px;
+        }
+
+    
+            
 }
 
 
