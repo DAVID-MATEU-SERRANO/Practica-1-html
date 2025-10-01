@@ -228,7 +228,7 @@ main {
 }
 
 input[type="text"],
-input[type="mail"],
+input[type="email"],
 input[type="number"],
 input[type="date"]{
     width: 80%;
@@ -245,7 +245,7 @@ input[type="date"]{
 }
 
 input[type="text"]:hover,
-input[type="mail"]:hover,
+input[type="email"]:hover,
 input[type="number"]:hover,
 input[type="date"]:hover {
     transition: 0.2s;
@@ -253,7 +253,7 @@ input[type="date"]:hover {
 }
 
 input[type="text"]:hover::placeholder,
-input[type="mail"]:hover::placeholder,
+input[type="email"]:hover::placeholder,
 input[type="number"]:hover::placeholder,
 input[type="date"]:hover::placeholder {
     transition: 0.2s;
@@ -261,7 +261,7 @@ input[type="date"]:hover::placeholder {
 }
 
 input[type="text"] :focus,
-input[type="mail"] :focus,
+input[type="email"] :focus,
 input[type="number"] :focus,
 input[type="date"]:focus{
     transition: 0.2s;
@@ -320,8 +320,9 @@ input[type="date"]:focus{
 
 .comprar-borrar button{
     width: auto;
-    height: 30px;
+    height: 45px;
     margin-top: 30px;
+    padding: 10px;
 
     background-color: rgba(52, 53, 57, 0.704);
     border: solid;
@@ -331,6 +332,7 @@ input[type="date"]:focus{
     text-decoration: none;
 
     color: white;
+    font-size: 20px;
     cursor: pointer;
     transition: 0.25s;
 }
@@ -384,6 +386,7 @@ footer{
     width:500px;
     list-style: none;
     padding: 0;
+    transition: 0.25s;
 }
 .enlaces a{
     text-decoration: none;
@@ -406,7 +409,7 @@ footer{
     align-items: center;
 }
 
-.newsletter input[type="mail"]{
+.newsletter input[type="email"]{
     height: 30px;
     margin-top: 0px;
     width: 53%;
@@ -494,7 +497,7 @@ footer{
     }
     
 
-    .newsletter input[type="mail"]{
+    .newsletter input[type="email"]{
     height: 30px;
     margin-top: 0px;
     width: 53%;
@@ -539,7 +542,7 @@ footer{
         margin-right: 20px;
         width: 60%;
     }
-    .newsletter input[type="mail"]{
+    .newsletter input[type="email"]{
         width: 68%;
     }
 

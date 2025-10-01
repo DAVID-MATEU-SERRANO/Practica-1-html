@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8">
         <title>Mochileros Sin Fronteras</title>
         <link rel="stylesheet" href="style/versionA.css">
-        <link rel="icon" type="png" href="images/logo.png">
+        <link rel="icon" type="image/png" href="images/logo.png">
         <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel="stylesheet">
     </head>
     <body>
@@ -20,7 +20,7 @@
             </div>
 
             <div class = "logo-idioma">
-                <div><img src="images/logo.png"></div>
+                <div><img src="images/logo.png" alt="Logo de la página"></div>
                 <div>
                     <select>
                         <option>Español</option>
@@ -39,8 +39,8 @@
                 <input type="text" name = "apellidos" placeholder="Apellidos">
             </div>
             <div class="paralelo">
-                <input type="mail" name = "mail" placeholder = "Correo electrónico"> <!-- required hace q el campo sea obligatorio  -->
-                <input type="mail" placeholder = "Confirmar correo">
+                <input type="email" name = "mail" placeholder = "Correo electrónico"> <!-- required hace q el campo sea obligatorio  -->
+                <input type="email" placeholder = "Confirmar correo">
             </div>
             <div class="fecha">
                 <label for="fnacim">Fecha de nacimiento:</label>
@@ -62,7 +62,7 @@
                 </label>
             </div>
             <div class="Guardar">
-                <button class="Guardar-boton"><a href="https://doncelcp.es/" target="_blank">Guardar datos y acceder</a></button><!-- Esto será un hipervínculo a la página b-->
+                <a href="versionB.html" target="_blank" >Guardar datos y acceder</a><!-- Esto será un hipervínculo a la página b-->
             </div>
             
         </form>
@@ -76,7 +76,7 @@
                 <li><a href="https://www.uc3m.es/Inicio" target="_blank">Ayuda</a></li>
             </ul>
             <div class="newsletter">
-                <input type="mail" name = "mail-newsletter" placeholder = "Correo electrónico">
+                <input type="email" name = "mail-newsletter" placeholder = "Correo electrónico">
                 <button onclick="alert('¡ENHORABUENA! Se ha suscrito a la newsletter')">Suscribirse a la newsletter</button>
             </div>
             <div class="RRSS">

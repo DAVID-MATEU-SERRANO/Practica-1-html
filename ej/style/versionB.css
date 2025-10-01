@@ -546,6 +546,7 @@ footer{
     width:500px;
     list-style: none;
     padding: 0;
+    transition: 0.25s;
 }
 .enlaces a{
     text-decoration: none;
