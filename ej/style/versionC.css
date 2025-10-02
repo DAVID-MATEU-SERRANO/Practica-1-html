@@ -29,46 +29,51 @@ header {
 
 }
 
-.titulo-web {
-    display:flex;
-    justify-content: center;
-    width: 270px;
-    margin-left:20px;
+header h1 {
+    text-align: center;
+    width: 320px;
 
     font-weight: 900;   
-    font-size: 21px;
+    font-size: 22px;
     color: white;
-    white-space: nowrap;
 
     transition: 0.25s;
 
 }
 
-.titulo-web:hover {
+header h1:hover {
     text-shadow: 0px 0px 10px white;
-    font-size: 22px;
+    font-size: 23px;
     color: white;
 }
 
-.menu-nav {
+
+header ul {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-flow: row wrap;
     align-items: center;
-    width:500px;
+    width:  470px;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    transition: 0.25s;
+
 }
 
-.menu-nav a{
+header a{
     text-decoration: none;
     color: rgb(215, 215, 215);
-    font-size: 16px;
+    font-size: 15px;
 }
 
-.menu-nav div:hover{
+header a:hover{
+    color: white;
     text-shadow: 0px 0px 10px white;
     text-decoration: underline;
-    font-weight: 600;   
-    color: white;
     cursor:pointer;
 }
 
@@ -90,8 +95,7 @@ header {
     transform: scale(1.2);
 }
 
-.logo-idioma select,
-.right-content select {
+.logo-idioma select {
     width: 90px;
     height: 30px;
     background-color: rgb(215, 215, 215);
@@ -128,7 +132,6 @@ main {
     background-image: repeating-linear-gradient(45deg, rgb(30, 30, 32) 0px, rgb(30, 30, 32) 10px, rgb(25, 25, 29) 10px, rgb(25, 25, 29) 20px); 
     border-radius: 10px;
     box-shadow: 7px 7px 14px rgb(17, 17, 17);
-    height: 220px;
 
     display: flex;
     flex-direction: row;
@@ -225,6 +228,18 @@ main {
 .titulo-compra{
     width: max-content;  /*Hace h1 un inline block*/
     margin-bottom: 10px;
+
+    font-size:30px; 
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
+    font-weight: 900;
+    transition: 0.25s;
+}
+
+.titulo-compra:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+    border-color: white;
 }
 
 input[type="text"],
@@ -281,6 +296,20 @@ input[type="date"]:focus{
     margin-top: 10px;
 }
 
+.tarjeta label {
+    font-size:23px; 
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
+    font-weight: 900;
+    transition: 0.25s;
+}
+
+.tarjeta label:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+    border-color: white;
+}
+
 .fecha{
     width: 80%;
     margin-top: 20px;
@@ -294,6 +323,20 @@ input[type="date"]:focus{
     border-color: rgba(241, 234, 234, 0.6);
     border-width: 1px;
     border-radius: 10px;
+}
+
+.fecha label {
+    font-size:23px; 
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
+    font-weight: 900;
+    transition: 0.25s;
+}
+
+.fecha label:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+    border-color: white;
 }
 
 .cvv{
@@ -478,6 +521,7 @@ footer{
 
 
 @media only screen and (max-width: 1360px) {
+    /*FOOTER*/
     .newsletter{
         flex-direction: column;
     }
@@ -488,6 +532,7 @@ footer{
 }
 
 @media only screen and (max-width: 1060px) {
+    /*FOOTER*/
     .enlaces{
         flex-direction: column;
     }
@@ -499,22 +544,20 @@ footer{
     
 
     .newsletter input[type="email"]{
-    height: 30px;
-    margin-top: 0px;
-    width: 53%;
-}
-
-
-.newsletter button{
-    height: 100%;
-    width: 40%;
-    margin-left: 10px;
+        height: 30px;
+        margin-top: 0px;
+        width: 53%;
     }
+
+    .newsletter button{
+        height: 100%;
+        width: 40%;
+        margin-left: 10px;
+        }
 
     .copy{
         font-size: 13px;
     }
-    
 }
 
 @media only screen and (max-width: 768px) {
@@ -537,6 +580,34 @@ footer{
         font-size: 12px;
         top: 23%;
     }
+
+    /*HEADER*/
+
+    header a{
+        font-size: 13px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .logo-idioma img {
+        width: 65px;
+    }
+
+    .logo-idioma select {
+        width: 70px;
+        height: 20px;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .logo-idioma {
+        width: 180px;
+        flex-direction: column;
+    }
+
+    /*FOOTER*/
 
     .newsletter{
         flex-direction: column;
@@ -548,40 +619,18 @@ footer{
     }
 
     .newsletter button{
-    height: 40px;
-    width: 73%;
-    margin-left: 0px;
+        height: 40px;
+        width: 73%;
+        margin-left: 0px;
 
-    font-size: 12px;
-    }
+        font-size: 12px;
+        }
 
     .RRSS a{
         height: 60%;
     }
 }
 
-
-@media only screen and (max-width: 768px) {
-    main {
-    grid-template-columns: 1fr;
-    }
-
-    .left-content{
-        margin-bottom: 20px;
-    }
-
-    .left-content-B p{
-        font-size: 16px;
-    }
-    .pack-info-1,
-    .pack-info-2{
-        font-size: 20px;
-    }
-    .pack-info-3{
-        font-size: 12px;
-        top: 23%;
-    }
-}
 
 @media only screen and (max-width: 600px) {
     main{
@@ -603,9 +652,14 @@ footer{
         left: 0px;
         right: 0px;
     }
-}
 
-@media only screen and (max-width: 600px) {
+    /*HEADER*/
+    header a{
+        font-size: 12px;
+    }
+    
+    /*FOOTER*/
+
     footer{
         flex-wrap: wrap;
         height: 230px;

@@ -36,46 +36,51 @@ header {
 
 }
 
-.titulo-web {
-    display:flex;
-    justify-content: center;
-    width: 270px;
-    margin-left:20px;
+header h1 {
+    text-align: center;
+    width: 320px;
 
     font-weight: 900;   
-    font-size: 21px;
+    font-size: 22px;
     color: white;
-    white-space: nowrap;
 
     transition: 0.25s;
 
 }
 
-.titulo-web:hover {
+header h1:hover {
     text-shadow: 0px 0px 10px white;
-    font-size: 22px;
+    font-size: 23px;
     color: white;
 }
 
-.menu-nav {
+
+header ul {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-flow: row wrap;
     align-items: center;
-    width:500px;
+    width:  470px;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    transition: 0.25s;
+
 }
 
-.menu-nav a{
+header a{
     text-decoration: none;
     color: rgb(215, 215, 215);
-    font-size: 16px;
+    font-size: 15px;
 }
 
-.menu-nav div:hover{
+header a:hover{
+    color: white;
     text-shadow: 0px 0px 10px white;
     text-decoration: underline;
-    font-weight: 600;   
-    color: white;
     cursor:pointer;
 }
 
@@ -112,7 +117,6 @@ header {
 }
 
 /* MAIN */
-/*AAAAAAAAAAAA ns si tienen mucho sentido los margenes pesar sobre eso*/
 form {
     width: 700px;
     margin-top: 130px;
@@ -131,7 +135,17 @@ form {
 }
 
 .titulo-reg{
-    width: max-content;  /*Hace h1 un inline block*/
+    font-size:26px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
+    font-weight: 900;
+    transition: 0.25s; /*Hace h1 un inline block*/
+}
+
+.titulo-reg:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+    border-color: white;
 }
 
 
@@ -192,6 +206,20 @@ input[type="checkbox"]{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.fecha label {
+    font-size:20px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.316);
+    font-weight: 900;
+    transition: 0.25s;
+}
+
+.fecha label:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+    border-color: white;
 }
 
 .fecha input[type="date"]{
@@ -261,18 +289,6 @@ input[type="checkbox"]:hover::placeholder{
     color: white;
     cursor:pointer;
 }
-
-/* Por si me da por hacer un botón
-.Guardar-boton{
-    height: 30px;
-    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
-    box-shadow: 3px 3px 6px rgb(17, 17, 17);
-
-    border-color: rgba(241, 234, 234, 0.6);
-    border-width: 1px;
-    border-radius: 10px;
-}*/
-
 
 
 
@@ -411,33 +427,6 @@ footer{
 
 /*VERSIÓN RESPONSIVE*/
 
-@media only screen and (max-width: 600px) {
-    html{
-        height: auto;
-    }
-    form{
-        margin-bottom: 260px;
-    }
-    .paralelo {
-    flex-direction: column;
-    }
-    .titulo-reg{
-        font-size:25px;
-    }
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="date"]{
-        width: auto;
-    }
-    .fecha{
-        margin-left: 0px;
-    }
-}
-
-/*Footer*/
-
-
 
 @media only screen and (max-width: 1360px) {
     .newsletter{
@@ -520,13 +509,37 @@ footer{
     .RRSS a{
         height: 60%;
     }
+
+    /*HEADER*/
+
+    header a{
+        font-size: 13px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .logo-idioma img {
+        width: 65px;
+    }
+
+    .logo-idioma select {
+        width: 70px;
+        height: 20px;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .logo-idioma {
+        width: 180px;
+        flex-direction: column;
+    }
+
 }
 
-
-
-
-
 @media only screen and (max-width: 600px) {
+    /*FOOTER*/
     footer{
         flex-wrap: wrap;
         height: 230px;
@@ -549,4 +562,33 @@ footer{
         height: 60%;
         width: 20%;
     }
+
+    /**/    
+    html{
+        height: auto;
+    }
+    form{
+        margin-bottom: 260px;
+    }
+    .paralelo {
+    flex-direction: column;
+    }
+    .titulo-reg{
+        font-size:25px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"]{
+        width: auto;
+    }
+    .fecha{
+        margin-left: 0px;
+    }
+
+    /*HEADER*/
+    header a{
+        font-size: 12px;
+    }
+    /**/
 }

@@ -431,6 +431,11 @@ input[type = "text"] {
     font-size: 17px;
 }
 
+input[type = "text"]:hover {
+    transition: 0.2s;
+    border: 1px solid white;
+}
+
 .recordar-credenciales {
     color: rgb(255, 255, 255);
     font-size: 16px;
@@ -522,6 +527,7 @@ input[type = "text"] {
 
 /* FOOTER */
 
+
 footer{
     background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42)); 
     border-radius: 5px;
@@ -563,12 +569,13 @@ footer{
     width:500px;
     list-style: none;
     padding: 0;
-    transition: 0.25s;
+    
 }
 .enlaces a{
     text-decoration: none;
     color: rgb(215, 215, 215);
     font-size: 16px;
+    transition: 0.25s;
 }
 
 .enlaces a:hover{
@@ -577,6 +584,51 @@ footer{
     font-weight: 600;   
     color: white;
     cursor:pointer;
+}
+
+.newsletter{
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter input[type="email"]{
+    height: 30px;
+    margin-top: 0px;
+    width: 53%;
+
+    background: radial-gradient(circle at top, rgb(52, 53, 57),rgb(35, 35, 42));
+    box-shadow: 3px 3px 6px rgb(17, 17, 17);
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+    
+
+    color: white;
+}
+
+
+.newsletter button{
+    height: 100%;
+    width: 120px;
+
+    background-color: rgba(52, 53, 57, 0.704);
+    border: solid;
+    border-color: rgba(241, 234, 234, 0.6);
+    border-width: 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 6px 0px;
+
+    color: white;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    text-shadow: 0px 0px 10px white;
+    color: white;
+    border-color: white;
 }
 
 .RRSS{
@@ -588,7 +640,7 @@ footer{
 }
 
 .RRSS a{
-    display: flex;          /* para que la imagen dentro sea flex item */
+    display: flex;
     align-items: center;
     height: 100%;
     object-fit: contain;
@@ -616,6 +668,14 @@ footer{
         grid-template-rows: 1fr 2fr;
         row-gap: 15px;
     }
+    /*FOOTER*/
+    .newsletter{
+        flex-direction: column;
+    }
+    .newsletter button{
+        width: 54%;
+        margin-top: 10px;
+    }
 }
 
 @media only screen and (max-width: 1060px) {
@@ -627,15 +687,41 @@ footer{
         grid-template-columns: 1fr;
         row-gap: 15px;
         grid-template-rows: 1fr 0.7fr;
+    }
 
+    /*FOOTER*/
+    .enlaces{
+        flex-direction: column;
+    }
+    .newsletter{
+        flex-direction: row;
+        margin-right: 20px;
+        width: 50%;
+    }
+    
+
+    .newsletter input[type="email"]{
+        height: 30px;
+        margin-top: 0px;
+        width: 53%;
+    }
+
+    .newsletter button{
+        height: 100%;
+        width: 40%;
+        margin-left: 10px;
+        }
+
+    .copy{
+        font-size: 13px;
     }
 }
 
 
 @media only screen and (max-width: 768px) {
-  body {
-    background: lightblue;
-  }
+    body {
+        background: lightblue;
+    }
 
     .left-content-A_1 div {
         font-size: 19px;  
@@ -707,11 +793,38 @@ footer{
         width: 180px;
         flex-direction: column;
     }
+
+    /*FOOTER*/
+
+    .newsletter{
+        flex-direction: column;
+        margin-right: 20px;
+        width: 60%;
+    }
+    .newsletter input[type="email"]{
+        width: 68%;
+    }
+
+    .newsletter button{
+        height: 40px;
+        width: 73%;
+        margin-left: 0px;
+
+        font-size: 12px;
+        }
+
+    .RRSS a{
+        height: 60%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     body {
         background: rgb(159, 246, 169);
+    }
+
+    main {
+        margin-bottom:270px;
     }
 
     /*HEADER*/
@@ -725,5 +838,30 @@ footer{
 
     .tarjetas-titulo {
         font-size:20px;
+    }
+
+    /*FOOTER*/
+
+    footer{
+        flex-wrap: wrap;
+        height: 230px;
+        justify-content: center;
+    }
+    .enlaces{
+        width: 60%;
+    }
+    .newsletter{
+        width: 30%;
+        margin-left: 0px;
+    }
+    .copy{
+        order: 3;
+        width: 40%;
+        text-align: center;
+        font-size: 16px;
+    }
+    .RRSS a{
+        height: 60%;
+        width: 20%;
     }
 }
