@@ -679,9 +679,6 @@ footer{
 }
 
 @media only screen and (max-width: 1060px) {
-    body {
-        background: rgb(230, 173, 173);
-    }
 
     main {
         grid-template-columns: 1fr;
@@ -719,9 +716,6 @@ footer{
 
 
 @media only screen and (max-width: 768px) {
-    body {
-        background: lightblue;
-    }
 
     .left-content-A_1 div {
         font-size: 19px;  
@@ -819,9 +813,6 @@ footer{
 }
 
 @media only screen and (max-width: 600px) {
-    body {
-        background: rgb(159, 246, 169);
-    }
 
     main {
         margin-bottom:270px;
