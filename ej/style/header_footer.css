@@ -233,3 +233,133 @@ footer{
 .RRSS img:hover{
     transform: scale(1.2);
 }
+
+
+/* MEDIA QUERIES*/
+
+
+@media only screen and (max-width: 1360px) {
+    /*FOOTER*/
+    .newsletter{
+        flex-direction: column;
+    }
+    .newsletter button{
+        width: 54%;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 1060px) {
+    /*FOOTER*/
+
+    .enlaces{
+        flex-direction: column;
+    }
+    .newsletter{
+        flex-direction: row;
+        margin-right: 20px;
+        width: 50%;
+    }
+    
+
+    .newsletter input[type="email"]{
+        height: 30px;
+        margin-top: 0px;
+        width: 53%;
+    }
+
+    .newsletter button{
+        height: 100%;
+        width: 40%;
+        margin-left: 10px;
+        }
+
+    .copy{
+        font-size: 13px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    /*HEADER*/
+
+    header a{
+        font-size: 13px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .logo-idioma img {
+        width: 65px;
+    }
+
+    .logo-idioma select {
+        width: 70px;
+        height: 20px;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .logo-idioma {
+        width: 180px;
+        flex-direction: column;
+    }
+
+    /*FOOTER*/
+
+    .newsletter{
+        flex-direction: column;
+        margin-right: 20px;
+        width: 60%;
+    }
+    .newsletter input[type="email"]{
+        width: 68%;
+    }
+
+    .newsletter button{
+        height: 40px;
+        width: 73%;
+        margin-left: 0px;
+
+        font-size: 12px;
+        }
+
+    .RRSS a{
+        height: 60%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /*HEADER*/
+    header a{
+        font-size: 12px;
+    }
+
+    /*FOOTER*/
+
+    footer{
+        flex-wrap: wrap;
+        height: 230px;
+        justify-content: center;
+    }
+    .enlaces{
+        width: 60%;
+    }
+    .newsletter{
+        width: 30%;
+        margin-left: 0px;
+    }
+    .copy{
+        order: 3;
+        width: 40%;
+        text-align: center;
+        font-size: 16px;
+    }
+    .RRSS a{
+        height: 60%;
+        width: 20%;
+    }
+}
