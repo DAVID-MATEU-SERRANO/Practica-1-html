@@ -79,14 +79,31 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
+    overflow: hidden;
+
 }
+
 
 .pack-info {
     position: relative;
     display: flex;
+    justify-content: space-around;
+
+    transition: transform .5s ease;
+    will-change: transform;
+    gap: 40px;
+    padding: 0px;
+}
+
+.carrusel-item{
+    min-width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex: 0 0 100%;
+    border: 0;
+    position: relative;
 }
 
 .pack-info-1 {
