@@ -90,10 +90,9 @@ main {
     display: flex;
     justify-content: space-around;
 
-    transition: transform .5s ease;
+    transition: transform 2s ease;
     will-change: transform;
-    gap: 40px;
-    padding: 0px;
+    gap: 5.45%;
 }
 
 .carrusel-item{
@@ -180,7 +179,7 @@ main {
     border-radius: 10px;
 
     color: rgba(255, 255, 255, 0.6);
-    font-size: 30px;
+    font-size: 29px;
     cursor: pointer;
     transition: 0.25s;
 }
