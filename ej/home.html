@@ -156,15 +156,15 @@
             </div>
 
             <aside>
-                <form>
-                    <input type="text" placeholder="Usuario">
-                    <input type="text" placeholder="Contraseña">
+                <form class="login">
+                    <input type="text" id="usuario" placeholder="Usuario">
+                    <input type="password" id="contraseña" placeholder="Contraseña">
                     <div class = "recordar-credenciales">
-                        <input type="checkbox">
+                        <input id="credenciales" type="checkbox">
                         <label>Recordar credenciales</label>
                     </div>
                     <div class = "botones-credenciales">
-                        <a href = "versionB.html" target = "_blank">Iniciar sesión</a>
+                        <button class="Inicio-sesion" type="submit">Iniciar sesión</button>
                         <a href = "versionA.html" target = "_blank">Registro</a>
                     </div>
                 </form>
@@ -229,6 +229,7 @@
                 </a>
             </div>
         </footer>
-    <script src="script/script.js"></script>    
+    <script src="script/carrusel.js"></script>
+    <script src="script/home.js"></script>    
     </body>
 </html>

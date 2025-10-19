@@ -333,7 +333,8 @@ form {
     box-shadow: 7px 7px 14px rgb(15, 15, 17);
 }
 
-input[type = "text"] {
+input[type = "text"],
+input[type = "password"] {
     width: 80%;
     height: 15%;
 
@@ -346,7 +347,8 @@ input[type = "text"] {
     font-size: 17px;
 }
 
-input[type = "text"]:hover {
+input[type = "text"]:hover ,
+input[type = "password"]:hover{
     transition: 0.2s;
     border: 1px solid white;
 }
@@ -362,7 +364,8 @@ input[type = "text"]:hover {
     justify-content: center;
     gap: 40px;    
 }
-.botones-credenciales a {
+.botones-credenciales a,
+.botones-credenciales button {
     background-color: rgba(52, 53, 57, 0.704);
     border: solid;
     border-color: rgba(241, 234, 234, 0.6);
