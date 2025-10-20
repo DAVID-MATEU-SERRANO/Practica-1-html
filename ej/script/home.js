@@ -1,22 +1,22 @@
 const form = document.querySelector(".login");
-const usuarioInput = document.getElementById("usuario");
-const passwordInput = document.getElementById("contraseña");
+const usuario_input = document.getElementById("usuario");
+const password_input = document.getElementById("contraseña");
 
-// --- Al enviar el formulario ---
+
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // evita que recargue la página
 
-    const usuario = usuarioInput.value.trim();
-    const password = passwordInput.value.trim();
+  const usuario = usuario_input.value.trim();
+  const password = password_input.value.trim();
 
   // Leemos del localStorage
-    const usuarioGuardado = localStorage.getItem("usuario");
-    const passwordGuardada = localStorage.getItem("contraseña");
+  const usuario_guardado = localStorage.getItem("usuario");
+  const password_guardada = localStorage.getItem("contraseña");
 
   // Comprobamos si coinciden
-    if (usuario === usuarioGuardado && password === passwordGuardada) {
-    window.location.href = "versionB.html";
-    } else {
-    alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
+  if (usuario === usuario_guardado && password === password_guardada) {
+  window.location.href = "versionB.html";
+  } else {
+  alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
     }
 });

@@ -37,20 +37,20 @@
         <form class="Registro">
             <h2 class="titulo-reg">Registro de nuevos usuarios</h2>
             <div class="paralelo">
-                <input type="text" name = "nombre" placeholder="Nombre">
-                <input type="text" name = "apellidos" placeholder="Apellidos">
+                <input type="text" class = "nombre" placeholder="Nombre">
+                <input type="text" class = "apellidos" placeholder="Apellidos">
             </div>
             <div class="paralelo">
-                <input type="email" name = "mail" placeholder = "Correo electrónico"> <!-- required hace q el campo sea obligatorio  -->
-                <input type="email" placeholder = "Confirmar correo">
+                <input type="email" class = "mail" placeholder = "Correo electrónico"> 
+                <input type="email" class="mail-confirmation" placeholder = "Confirmar correo">
             </div>
             <div class="fecha">
                 <label for="fnacim">Fecha de nacimiento:</label>
-                <input type="date" id = "fnacim">
+                <input type="date" class = "fnacim">
             </div>
             <div class="paralelo">
-                <input type="text" name = "usuario" placeholder = "login">
-                <input type="password" name = "Contraseña" placeholder = "password">
+                <input type="text" class = "usuario" placeholder = "login">
+                <input type="password" class = "Contraseña" placeholder = "password">
             </div>
             <div class="fecha">
                 <label for="img-perfil">Subir imagen de imagen de perfil</label>
@@ -64,7 +64,7 @@
                 </label>
             </div>
             <div class="Guardar">
-                <a href="versionB.html" target="_blank" >Guardar datos y acceder</a>
+                <button class="boton-guardar" type="submit">Guardar datos y acceder</button>
             </div>
             
         </form>
@@ -93,5 +93,6 @@
                 </a>
             </div>
         </footer>
+        <script src="script/VersionA.js"></script>
     </body>
 </html>
