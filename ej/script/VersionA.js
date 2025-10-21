@@ -59,7 +59,7 @@ form.addEventListener("submit", (e) => {
 
     let fecha = fnacim.value;
     if (!fecha){
-        return alert("Seleccione una fecha");
+        return alert("Seleccione su fecha de nacimiento.");
     }
 
     fecha = new Date(fecha);

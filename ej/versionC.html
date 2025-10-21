@@ -57,29 +57,30 @@
             <form class="right-content">
                 
                 <h2 class="titulo-compra">Formulario de compra</h2>
-                <input type="text" name = "nombre" placeholder="Nombre completo">
-                <input type="email" name = "mail" placeholder = "Correo electrónico">
+                <input type="text" class = "nombre" placeholder="Nombre completo">
+                <input type="email" class = "mail" placeholder = "Correo electrónico">
                 <div class="tarjeta">
                     <label for="tipo-tarjeta">Tipo de tarjeta</label>
                     <select id="tipo-tarjeta">
+                        <option value="" selected disabled>Selecciona una opción</option>
                         <option>Visa</option>
                         <option>Mastercard</option>
                         <option>American Express</option>
                     </select>
                 </div>
-                <input type="number" name = "tarjeta" placeholder="Número de tarjeta">
-                <input type="text" name = "nombre_titular" placeholder="Nombre del titular de la tarjeta">
+                <input type="number" class = "numero-tarjeta" placeholder="Número de tarjeta">
+                <input type="text" class = "nombre_titular" placeholder="Nombre del titular de la tarjeta">
                 <div class="fecha-cvv">
                     <div>
                         <label for="fcad">Fecha de caducidad</label>
                         <input type="date" id = "fcad">
                     </div>
                     <div class="cvv">
-                        <input type="number" name="CVV" placeholder="Código CVV">
+                        <input type="number" class="CVV" placeholder="Código CVV">
                     </div>
                 </div>
                 <div class="comprar-borrar">
-                    <button>Comprar</button>
+                    <button type="submit">Comprar</button>
                     <button type="reset">Borar</button>
                 </div>
 
@@ -110,6 +111,7 @@
                     <img src="images/YouTube.png" alt="Youtube" class="YT-logo">
                 </a>
             </div>
+            <script src="script/VersionC.js"></script>
         </footer>
     </body>
 </html>
