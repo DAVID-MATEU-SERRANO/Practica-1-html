@@ -4,8 +4,8 @@ const apellidosInput = document.querySelector(".apellidos");
 const mail = document.querySelector(".mail");
 const mail_confirmation = document.querySelector(".mail-confirmation");
 const fnacim = document.getElementById("fnacim");
-const login = document.getElementById("usuario");
-const password = document.getElementById("contraseña");
+const login = document.querySelector(".usuario");
+const password = document.querySelector(".contraseña");
 const img_perfil = document.getElementById("img-perfil");
 const privacidad = document.getElementById("privacidad");
 
@@ -27,8 +27,8 @@ form.addEventListener("submit", (e) => {
     }
 
     // 2️⃣ Apellidos: al menos dos palabras, cada una de mínimo 3 letras
-    const partes = apellidos.split(" ").filter(noVacio);
-    const tieneApellidoCorto = partes.some(esCorto);
+    const partes = apellidos.split(" ").filter(no_vacio);
+    const tieneApellidoCorto = partes.some(es_corto);
     if (partes.length < 2 || tieneApellidoCorto) {
         return alert("❌ Los apellidos deben tener al menos dos palabras de 3 letras cada una.", "error");
     }
@@ -75,7 +75,46 @@ form.addEventListener("submit", (e) => {
 
     // Login
 
+    const usuario = login.value.trim();
 
+    if (usuario.length<5){
+        return alert("El usuario tiene longitud mínima de 5 caracteres.");
+    }
+
+    //Contraseña
+
+    const contraseña = password.value.trim();
+
+    let validacion = validar_contraseña(contraseña);
+
+    if (validacion !== "Todo ok"){
+        return alert("Contraseña inválida. " + validacion+ "\n Recuerda que el formato válido es 8 caracteres de " +
+            "longitud, con mínimo 2 números, 1 carácter especial, 1 letra mayúscula y 1 letra minúscula ");
+    }
+
+    // Imagen
+
+    const archivo = img_perfil.files[0]; // Tomamos el primer archivo seleccionado
+
+    // 1️⃣ Comprobar si hay archivo
+    if (!archivo) {
+        mensaje.textContent = "❌ Debes seleccionar una imagen de perfil.";
+        mensaje.style.color = "red";
+        return;
+    }
+
+    // 2️⃣ Validar por extensión
+    const nombreArchivo = archivo.name.toLowerCase(); 
+    const extensionesPermitidas = [".webp", ".png", ".jpg", ".jpeg"];
+
+    // Comprobamos si el nombre termina con alguna de las extensiones válidas
+    const esValida = extensionesPermitidas.some(ext => nombreArchivo.endsWith(ext));
+
+    if (!esValida) {
+        mensaje.textContent = "❌ Formato no válido. Solo se permiten .webp, .png y .jpg.";
+        mensaje.style.color = "red";
+        return;
+    }
 
     //  Política de privacidad
     if (!privacidad.checked) {
@@ -83,8 +122,8 @@ form.addEventListener("submit", (e) => {
     }
 
     // --- Si todo es correcto ---
-    const usuario = {nombre, apellidos};
-    localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario));
+    const usuario_actual = {nombre, apellidos};
+    localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario_actual));
 
     alert("✅ Registro completado correctamente. Redirigiendo...", "ok");
 
@@ -95,10 +134,41 @@ form.addEventListener("submit", (e) => {
 });
 
 
-function noVacio(palabra) {
+function no_vacio(palabra) {
     return palabra !== "";
 }
 
-function esCorto(palabra) {
+function es_corto(palabra) {
         return palabra.length < 3;
     }
+
+
+function validar_contraseña(contraseña) {
+    // 1️⃣ Longitud exacta
+    if (contraseña.length !== 8) {
+        return "❌ La contraseña debe tener exactamente 8 caracteres.";
+    }
+
+    // 2️⃣ Contadores
+    let numeros = 0;
+    let mayus = 0;
+    let minus = 0;
+    let especiales = 0;
+
+    // 3️⃣ Recorrer carácter a carácter
+    for (const c of contraseña) {
+        if (c >= '0' && c <= '9') numeros++;
+        else if (c >= 'A' && c <= 'Z') mayus++;
+        else if (c >= 'a' && c <= 'z') minus++;
+        else especiales++;
+    }
+
+    // 4️⃣ Comprobaciones
+    if (numeros < 2) return "❌ Debe contener al menos 2 números.";
+    if (mayus < 1) return "❌ Debe contener al menos 1 letra mayúscula.";
+    if (minus < 1) return "❌ Debe contener al menos 1 letra minúscula.";
+    if (especiales < 1) return "❌ Debe contener al menos 1 carácter especial.";
+
+    // ✅ Si pasa todo:
+    return "Todo ok";
+}
