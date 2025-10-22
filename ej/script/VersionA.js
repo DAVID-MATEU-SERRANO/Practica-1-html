@@ -94,21 +94,21 @@ form.addEventListener("submit", (e) => {
 
     // Imagen
 
-    const archivo = img_perfil.files[0]; // Tomamos el primer archivo seleccionado
+    const foto = img_perfil.files[0]; // Tomamos el primer archivo seleccionado
 
     // 1️⃣ Comprobar si hay archivo
-    if (!archivo) {
+    if (!foto) {
         mensaje.textContent = "❌ Debes seleccionar una imagen de perfil.";
         mensaje.style.color = "red";
         return;
     }
 
     // 2️⃣ Validar por extensión
-    const nombreArchivo = archivo.name.toLowerCase(); 
+    const nombre_archivo = foto.name.toLowerCase(); 
     const extensionesPermitidas = [".webp", ".png", ".jpg", ".jpeg"];
 
     // Comprobamos si el nombre termina con alguna de las extensiones válidas
-    const esValida = extensionesPermitidas.some(ext => nombreArchivo.endsWith(ext));
+    const esValida = extensionesPermitidas.some(ext => nombre_archivo.endsWith(ext));
 
     if (!esValida) {
         mensaje.textContent = "❌ Formato no válido. Solo se permiten .webp, .png y .jpg.";
@@ -120,17 +120,31 @@ form.addEventListener("submit", (e) => {
     if (!privacidad.checked) {
         return alert("⚠️ Debes aceptar la política de privacidad.", "error");
     }
+    // Convertir imagen a base 64 para poder guardarla en localStorage
+    const lector = new FileReader();
+    lector.readAsDataURL(foto);
+    // Metemos el resto del código dentro del onload porque es asíncrono
+    lector.onload = ev => {
+        const base64 = ev.target.result;
+    
 
-    // --- Si todo es correcto ---
-    const usuario_actual = {nombre, apellidos};
-    localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario_actual));
+    // Esperamos 
+    const usuario_actual = {
+        nombre, 
+        apellidos,
+        correo,
+        fecha,
+        contraseña,
+        base64
+    };
+    
+    guardar_usuario(usuario_actual);
 
     alert("✅ Registro completado correctamente. Redirigiendo...", "ok");
 
-    // Redirigir tras 2 segundos
-    setTimeout(() => {
-        window.location.href = "https://www.google.com";
-    }, 2000);
+    
+    window.location.href = "versionB.html";
+    }
 });
 
 
@@ -171,4 +185,35 @@ function validar_contraseña(contraseña) {
 
     // ✅ Si pasa todo:
     return "Todo ok";
+}
+
+
+function guardar_usuario(usuario_actual) {
+    // 1️⃣ Leer lo que ya hay en localStorage
+    let memoria = localStorage.getItem("usuarios");
+
+    // 2️⃣ Si no hay nada, creamos un diccionario vacío
+    if (!memoria) {
+        memoria = {};
+    } else {
+    // Si sí hay, lo convertimos de texto → objeto
+        memoria = JSON.parse(memoria);
+    }
+
+    // 3️⃣ Añadir o actualizar al usuario actual
+    // Suponemos que usuario_actual tiene forma:
+    // { nombre: "ana", password: "1234", email: "ana@uc3m.es" }
+
+    memoria[usuario_actual.usuario] = {
+        password: usuario_actual.password,
+        nombre: usuario_actual.nombre,
+        apellidos: usuario_actual.apellidos,
+        email: usuario_actual.email,
+        fnacim: usuario_actual.fecha,
+        foto_perfil: usuario_actual.base64
+    };
+    // 4️⃣ Guardar el nuevo diccionario como texto
+    localStorage.setItem("usuarios", JSON.stringify(memoria));
+
+    console.log("✅ Usuario guardado correctamente:", usuario_actual.nombre);
 }
