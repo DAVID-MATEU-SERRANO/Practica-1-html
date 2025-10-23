@@ -130,6 +130,7 @@ form.addEventListener("submit", (e) => {
 
     // Esperamos 
     const usuario_actual = {
+        usuario,
         nombre, 
         apellidos,
         correo,
@@ -142,7 +143,8 @@ form.addEventListener("submit", (e) => {
 
     alert("✅ Registro completado correctamente. Redirigiendo...", "ok");
 
-    
+    localStorage.setItem("usuario_actual", JSON.stringify(usuario_actual.usuario));
+
     window.location.href = "versionB.html";
     }
 });
@@ -205,10 +207,10 @@ function guardar_usuario(usuario_actual) {
     // { nombre: "ana", password: "1234", email: "ana@uc3m.es" }
 
     memoria[usuario_actual.usuario] = {
-        password: usuario_actual.password,
+        password: usuario_actual.contraseña,
         nombre: usuario_actual.nombre,
         apellidos: usuario_actual.apellidos,
-        email: usuario_actual.email,
+        email: usuario_actual.correo,
         fnacim: usuario_actual.fecha,
         foto_perfil: usuario_actual.base64
     };
