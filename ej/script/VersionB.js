@@ -8,8 +8,13 @@ if (!usuario_activo){
 
 if (!usuario) {
     alert("Debes iniciar sesión.");
-
 }
+
 
 document.querySelector(".nombre-usuario").textContent = usuario.nombre;
 document.querySelector(".foto-usuario").src = usuario.foto_perfil;
+
+let consejos = JSON.parse(localStorage.getitem("consejos"));
+if (!consejos){
+    consejos={};
+}

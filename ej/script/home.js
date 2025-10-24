@@ -10,11 +10,16 @@ form.addEventListener("submit", (e) => {
   const password = password_input.value.trim();
 
   // Leemos del localStorage
-  const usuario_guardado = localStorage.getItem("usuario");
-  const password_guardada = localStorage.getItem("contraseña");
+  const usuarios = JSON.parse(localStorage.getItem("usuarios"));
+  const usuario = usuarios[usuario_activo];
+
+  if (!usuario_activo){
+      alert("Debes registrarte.");
+      window.location.href = "versionA.html";
+  }
 
   // Comprobamos si coinciden
-  if (usuario === usuario_guardado && password === password_guardada) {
+  if (usuario ===  && password === ) {
   window.location.href = "versionB.html";
   } else {
   alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
