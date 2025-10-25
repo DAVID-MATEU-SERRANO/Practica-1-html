@@ -6,12 +6,12 @@ const password_input = document.getElementById("contraseña");
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // evita que recargue la página
 
-  const usuario = usuario_input.value.trim();
+  const user = usuario_input.value.trim();
   const password = password_input.value.trim();
 
   // Leemos del localStorage
   const usuarios = JSON.parse(localStorage.getItem("usuarios"));
-  const usuario = usuarios[usuario_activo];
+  const usuario_activo = usuarios[user];
 
   if (!usuario_activo){
       alert("Debes registrarte.");
@@ -19,7 +19,7 @@ form.addEventListener("submit", (e) => {
   }
 
   // Comprobamos si coinciden
-  if (usuario ===  && password === ) {
+  if (user === usuario_activo  && password === usuarios[user].password) {
   window.location.href = "versionB.html";
   } else {
   alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");

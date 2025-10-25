@@ -77,7 +77,7 @@ form.addEventListener("submit", (e) => {
 
     const usuario = login.value.trim();
 
-    if (usuario.length<5){
+    if (usuario.length<=5){
         return alert("El usuario tiene longitud mínima de 5 caracteres.");
     }
 
