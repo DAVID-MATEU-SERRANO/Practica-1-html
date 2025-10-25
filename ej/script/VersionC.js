@@ -7,6 +7,26 @@ const nombre_titular = document.querySelector(".nombre_titular");
 const fecha = document.getElementById("fcad");
 const cvv = document.querySelector("CVV");
 
+const compra_actual = JSON.parse(localStorage.getItem("compra_actual"));
+const imagen_pack = document.querySelector(".imagen-pack");
+const pack_info_1 = document.querySelector(".pack-info-1");
+const pack_info_2 = document.querySelector(".pack-info-2");
+const pack_info_3 = document.querySelector(".pack-info-3");
+const descripcion_pack = document.querySelector(".descipcion-pack");
+
+pack_info_1.textContent = compra_actual.pack;
+pack_info_2.textContent = compra_actual.precio + "€";
+pack_info_3.textContent = compra_actual.subtitulo;
+if (compra_actual.pack === "Pack Sudesde Asiático") {
+    imagen_pack.src = "images/img_pack.jpg";
+    descripcion_pack.textContent = compra_actual.descripcion;
+}else if (compra_actual.pack === "Pack Mina de la Jayona") {
+    imagen_pack.src = "images/Extremadura.jpg";
+    pack_info_1.textContent = compra_actual.pack;
+} else if (compra_actual.pack === "Pack La Serena") {
+    imagen_pack.src = "images/Medellin.jpg";
+    pack_info_1.textContent = compra_actual.pack;
+}
 
 
 form.addEventListener("submit", (e) => {
@@ -70,16 +90,9 @@ form.addEventListener("submit", (e) => {
     }
 
 
-    // --- Si todo es correcto  guardar la compra---
-    const usuario_actual = {nombre, apellidos};
-    localStorage.setItem("compra", JSON.stringify(usuario_actual));
 
     alert("✅ Compra realizada");
 
-    // Redirigir tras 2 segundos
-    setTimeout(() => {
-        window.location.href = "https://www.google.com";
-    }, 2000);
 });
 
 
