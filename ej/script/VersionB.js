@@ -1,7 +1,9 @@
+// TODO: redigir si no hay usuario activo
 const usuario_activo = JSON.parse(localStorage.getItem("usuario_actual"));
 const usuarios = JSON.parse(localStorage.getItem("usuarios"));
 const usuario = usuarios[usuario_activo];
 const enviar_consejos = document.querySelector(".enviar-consejos");
+const cerrar_sesion = document.querySelector(".cerrar-sesion");
 
 if (!usuario_activo){
     alert("Debes registrarte.");
@@ -65,3 +67,13 @@ function actualizar_consejos(consejos, nuevo){
     localStorage.setItem("consejos", JSON.stringify(consejos));
     actualizar_titulo_consejos(consejos);
 }
+
+cerrar_sesion.addEventListener("click", () => {
+    const confirmacion = confirm("¿Desea cerrar sesión?");
+
+    if (confirmacion) {
+    // ✅ El usuario confirmó
+        localStorage.removeItem("usuario_actual");
+        window.location.href = "home.html"; // redirección
+    } 
+});
