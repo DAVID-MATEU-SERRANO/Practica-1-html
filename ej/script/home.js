@@ -5,6 +5,13 @@ const boton1 = document.querySelector(".pack-info-button-0");
 const boton2 = document.querySelector(".pack-info-button-1");
 const boton3 = document.querySelector(".pack-info-button-2");
 
+let usuario_activo = localStorage.getItem("usuario_actual");
+
+// Si existe, lo eliminas
+if (usuario_activo) {
+  localStorage.removeItem("usuario_actual");
+  console.log("✅ Sesión cerrada: usuario_actual eliminado.");
+}
 
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // evita que recargue la página
@@ -14,18 +21,18 @@ form.addEventListener("submit", (e) => {
 
   // Leemos del localStorage
   const usuarios = JSON.parse(localStorage.getItem("usuarios"));
-  const usuario_activo = usuarios[user];
 
-  if (!usuario_activo){
+  if (!usuarios[user]){
       alert("Debes registrarte.");
       window.location.href = "versionA.html";
   }
 
   // Comprobamos si coinciden
-  if (user === usuario_activo  && password === usuarios[user].password) {
-  window.location.href = "versionB.html";
+  if (usuarios[user]  && password === usuarios[user].password) {
+    localStorage.setItem("usuario_actual", user);
+    window.location.href = "versionB.html";
   } else {
-  alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
+    alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
     }
 });
 

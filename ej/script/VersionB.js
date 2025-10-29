@@ -1,5 +1,5 @@
 // TODO: redigir si no hay usuario activo
-const usuario_activo = JSON.parse(localStorage.getItem("usuario_actual"));
+const usuario_activo = localStorage.getItem("usuario_actual");
 const usuarios = JSON.parse(localStorage.getItem("usuarios"));
 const usuario = usuarios[usuario_activo];
 const enviar_consejos = document.querySelector(".enviar-consejos");
