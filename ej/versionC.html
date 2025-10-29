@@ -53,26 +53,26 @@
             <form class="right-content">
                 
                 <h2 class="titulo-compra">Formulario de compra</h2>
-                <input type="text" class = "nombre" placeholder="Nombre completo">
-                <input type="email" class = "mail" placeholder = "Correo electrónico">
+                <input type="text" class = "nombre" placeholder="Nombre completo" required>
+                <input type="email" class = "mail" placeholder = "Correo electrónico" required>
                 <div class="tarjeta">
                     <label for="tipo-tarjeta">Tipo de tarjeta</label>
-                    <select id="tipo-tarjeta">
+                    <select id="tipo-tarjeta" required>
                         <option value="" selected disabled>Selecciona una opción</option>
                         <option>Visa</option>
                         <option>Mastercard</option>
                         <option>American Express</option>
                     </select>
                 </div>
-                <input type="number" class = "numero-tarjeta" placeholder="Número de tarjeta">
-                <input type="text" class = "nombre_titular" placeholder="Nombre del titular de la tarjeta">
+                <input type="number" class = "numero-tarjeta" placeholder="Número de tarjeta" required>
+                <input type="text" class = "nombre_titular" placeholder="Nombre del titular de la tarjeta" required>
                 <div class="fecha-cvv">
                     <div>
                         <label for="fcad">Fecha de caducidad</label>
-                        <input type="date" id = "fcad">
+                        <input type="date" id = "fcad" required>
                     </div>
                     <div class="cvv">
-                        <input type="number" class="CVV" placeholder="Código CVV">
+                        <input type="number" class="CVV" placeholder="Código CVV" required>
                     </div>
                 </div>
                 <div class="comprar-borrar">

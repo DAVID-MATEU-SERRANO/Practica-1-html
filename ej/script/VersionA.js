@@ -29,19 +29,19 @@ form.addEventListener("submit", (e) => {
 
     // --- VALIDACIONES ---
     if (!nombre || !apellidos) {
-        return alert("❌ Los campos marcados con * son obligatorios.", "error");
+        return alert("Los campos marcados con * son obligatorios.", "error");
     }
 
-    // 1️⃣ Nombre: mínimo 3 caracteres
+    // Nombre: mínimo 3 caracteres
     if (nombre.length < 3) {
-        return alert("❌ El nombre debe tener al menos 3 caracteres.", "error");
+        return alert("El nombre debe tener al menos 3 caracteres.", "error");
     }
 
-    // 2️⃣ Apellidos: al menos dos palabras, cada una de mínimo 3 letras
+    // Apellidos: al menos dos palabras, cada una de mínimo 3 letras
     const partes = apellidos.split(" ").filter(no_vacio);
     const tieneApellidoCorto = partes.some(es_corto);
     if (partes.length < 2 || tieneApellidoCorto) {
-        return alert("❌ Los apellidos deben tener al menos dos palabras de 3 letras cada una.", "error");
+        return alert("Los apellidos deben tener al menos dos palabras de 3 letras cada una.", "error");
     }
 
     // Correo
@@ -60,30 +60,27 @@ form.addEventListener("submit", (e) => {
     }
 
     if (!patronCorreo.test(correo)) {
-        return alert("❌ El correo electrónico no tiene un formato válido (debe ser nombre@dominio.extensión).");        
+        return alert("El correo electrónico no tiene un formato válido (debe ser nombre@dominio.extensión).");        
     }
     if (correo !== correo_conf) {
-        return alert("❌ Los correos electrónicos no coinciden. Revisa que los correos sean iguales.");        
+        return alert("Los correos electrónicos no coinciden. Revisa que los correos sean iguales.");        
     }
 
     // Fecha
 
     let fecha = fnacim.value;
-    if (!fecha){
-        return alert("Seleccione su fecha de nacimiento.");
+    if (fecha) {
+        fecha = new Date(fecha);
+        const hoy = new Date();
+
+        if (fecha > hoy) {
+            return alert("Los viajes al futuro no se han inventado todavía!! Pon una fecha real por favor.");
+        }
+
+        if (fecha.getFullYear() < 1900){
+            return alert("Es IMPOSIBLE que hayas nacido antes del S.XX!! Pon una fecha real por favor.");
+        }
     }
-
-    fecha = new Date(fecha);
-    const hoy = new Date();
-
-    if (fecha > hoy) {
-        return alert("Los viajes al futuro no se han inventado todavía!! Pon una fecha real por favor.");
-    }
-
-    if (fecha.getFullYear() < 1900){
-        return alert("Es IMPOSIBLE que hayas nacido antes del S.XX!! Pon una fecha real por favor.");
-    }
-
     // Login
 
     const usuario = login.value.trim();
@@ -99,7 +96,7 @@ form.addEventListener("submit", (e) => {
     let validacion = validar_contraseña(contraseña);
 
     if (validacion !== "Todo ok"){
-        return alert("Contraseña inválida. " + validacion+ "\n Recuerda que el formato válido es 8 caracteres de " +
+        return alert("Contraseña inválida. " + validacion + "\n Recuerda que el formato válido es 8 caracteres de " +
             "longitud, con mínimo 2 números, 1 carácter especial, 1 letra mayúscula y 1 letra minúscula ");
     }
 
@@ -109,9 +106,7 @@ form.addEventListener("submit", (e) => {
 
     // 1️⃣ Comprobar si hay archivo
     if (!foto) {
-        mensaje.textContent = "❌ Debes seleccionar una imagen de perfil.";
-        mensaje.style.color = "red";
-        return;
+        return alert("Debes seleccionar una imagen de perfil.");
     }
 
     // 2️⃣ Validar por extensión
@@ -122,9 +117,7 @@ form.addEventListener("submit", (e) => {
     const esValida = extensionesPermitidas.some(ext => nombre_archivo.endsWith(ext));
 
     if (!esValida) {
-        mensaje.textContent = "❌ Formato no válido. Solo se permiten .webp, .png y .jpg.";
-        mensaje.style.color = "red";
-        return;
+        return alert("Formato no válido. Solo se permiten .webp, .png y .jpg.");
     }
 
     // Convertir imagen a base 64 para poder guardarla en localStorage
@@ -150,7 +143,7 @@ form.addEventListener("submit", (e) => {
 
     alert("✅ Registro completado correctamente. Redirigiendo...", "ok");
 
-    localStorage.setItem("usuario_actual", JSON.stringify(usuario_actual.usuario));
+    localStorage.setItem("usuario_actual", usuario);
 
     window.location.href = "versionB.html";
     }
@@ -169,7 +162,7 @@ function es_corto(palabra) {
 function validar_contraseña(contraseña) {
     // 1️⃣ Longitud exacta
     if (contraseña.length !== 8) {
-        return "❌ La contraseña debe tener exactamente 8 caracteres.";
+        return "La contraseña debe tener exactamente 8 caracteres.";
     }
 
     // 2️⃣ Contadores
@@ -187,10 +180,10 @@ function validar_contraseña(contraseña) {
     }
 
     // 4️⃣ Comprobaciones
-    if (numeros < 2) return "❌ Debe contener al menos 2 números.";
-    if (mayus < 1) return "❌ Debe contener al menos 1 letra mayúscula.";
-    if (minus < 1) return "❌ Debe contener al menos 1 letra minúscula.";
-    if (especiales < 1) return "❌ Debe contener al menos 1 carácter especial.";
+    if (numeros < 2) return "Debe contener al menos 2 números.";
+    if (mayus < 1) return "Debe contener al menos 1 letra mayúscula.";
+    if (minus < 1) return "Debe contener al menos 1 letra minúscula.";
+    if (especiales < 1) return "Debe contener al menos 1 carácter especial.";
 
     // ✅ Si pasa todo:
     return "Todo ok";
