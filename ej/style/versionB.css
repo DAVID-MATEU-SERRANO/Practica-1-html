@@ -79,14 +79,29 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
+    overflow: hidden;
 }
+
 
 .pack-info {
     position: relative;
     display: flex;
+    justify-content: space-around;
+
+    transition: transform 2s ease;
+    will-change: transform;
+    gap: 5.45%;
+}
+
+.carrusel-item{
+    min-width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex: 0 0 100%;
+    border: 0;
+    position: relative;
 }
 
 .pack-info-1 {
@@ -127,7 +142,7 @@ main {
     left: 1%;
 }
 
-.pack-info-button {
+.pack-info button {
     position:absolute;
     bottom: 4%;
     right: 1%;
@@ -152,7 +167,6 @@ main {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
- 
 }
 
 .nav-button-1, .nav-button-2 {
@@ -163,7 +177,7 @@ main {
     border-radius: 10px;
 
     color: rgba(255, 255, 255, 0.6);
-    font-size: 30px;
+    font-size: 29px;
     cursor: pointer;
     transition: 0.25s;
 }

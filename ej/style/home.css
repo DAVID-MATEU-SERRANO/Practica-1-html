@@ -1,6 +1,6 @@
 * {
-  margin: 0;
-  box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 
@@ -81,7 +81,6 @@ main {
     align-items: center;
     justify-content: space-evenly;
     overflow: hidden;
-
 }
 
 
@@ -168,7 +167,6 @@ main {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
- 
 }
 
 .nav-button-1, .nav-button-2 {
