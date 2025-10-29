@@ -9,6 +9,17 @@ const password = document.querySelector(".contraseña");
 const img_perfil = document.getElementById("img-perfil");
 const privacidad = document.getElementById("privacidad");
 
+const guardar = document.querySelector(".Guardar");
+
+// Escuchar cuando cambia el checkbox
+privacidad.addEventListener("change", () => {
+    if (privacidad.checked) {
+        guardar.style.display = "flex"; // Mostrar botón
+    } else {
+        guardar.style.display = "none";  // Ocultar botón
+    }
+});
+
 
 form.addEventListener("submit", (e) => {
     e.preventDefault(); // evita que se recargue la página
@@ -116,10 +127,6 @@ form.addEventListener("submit", (e) => {
         return;
     }
 
-    //  Política de privacidad
-    if (!privacidad.checked) {
-        return alert("⚠️ Debes aceptar la política de privacidad.", "error");
-    }
     // Convertir imagen a base 64 para poder guardarla en localStorage
     const lector = new FileReader();
     lector.readAsDataURL(foto);

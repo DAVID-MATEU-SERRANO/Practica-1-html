@@ -52,7 +52,8 @@ enviar_consejos.addEventListener("submit", (e) => {
         return alert("El título del consejo debe tener al menos 15 caracteres.");
     }
     const descripcion_actual = document.querySelector(".descripcion-consejo").value.trim();
-    if (titulo_actual.length <29){
+    if (descripcion_actual.length <29){
+        console.log("Descripción longitud:", descripcion_actual.length);
         return alert("La descripción consejo debe tener al menos 30 caracteres.");
     }
     const nuevo =[
