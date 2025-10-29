@@ -5,12 +5,8 @@ const usuario = usuarios[usuario_activo];
 const enviar_consejos = document.querySelector(".enviar-consejos");
 const cerrar_sesion = document.querySelector(".cerrar-sesion");
 
-if (!usuario_activo){
-    alert("Debes registrarte.");
-}
-
-if (!usuario) {
-    alert("Debes iniciar sesión.");
+if (!usuario_activo || !usuario) {
+    window.location.href = "home.html";
 }
 
 

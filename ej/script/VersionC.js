@@ -17,16 +17,8 @@ const descripcion_pack = document.querySelector(".descipcion-pack");
 pack_info_1.textContent = compra_actual.pack;
 pack_info_2.textContent = compra_actual.precio + "€";
 pack_info_3.textContent = compra_actual.subtitulo;
-if (compra_actual.pack === "Pack Sudesde Asiático") {
-    imagen_pack.src = "images/img_pack.jpg";
-    descripcion_pack.textContent = compra_actual.descripcion;
-}else if (compra_actual.pack === "Pack Mina de la Jayona") {
-    imagen_pack.src = "images/Extremadura.jpg";
-    pack_info_1.textContent = compra_actual.pack;
-} else if (compra_actual.pack === "Pack La Serena") {
-    imagen_pack.src = "images/Medellin.jpg";
-    pack_info_1.textContent = compra_actual.pack;
-}
+imagen_pack.src = compra_actual.imagen;
+descripcion_pack.textContent = compra_actual.descripcion;
 
 
 form.addEventListener("submit", (e) => {
