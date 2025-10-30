@@ -86,9 +86,6 @@ boton3.addEventListener("click", () => {
   localStorage.setItem("compra_actual", JSON.stringify(compra_actual));
   window.location.href = "versionC.html";
 }); 
-boton3.addEventListener("click", () => {
-  window.location.href = "versionC.html";
-});
 
 
 prevBtn.addEventListener("click", () => {
