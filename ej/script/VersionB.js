@@ -67,10 +67,9 @@ function actualizar_consejos(consejos, nuevo){
 
 cerrar_sesion.addEventListener("click", () => {
     const confirmacion = confirm("¿Desea cerrar sesión?");
-
+    // Si confirma, se elimina el usuario actual y se redirige a home.html
     if (confirmacion) {
-    // ✅ El usuario confirmó
         localStorage.removeItem("usuario_actual");
-        window.location.href = "home.html"; // redirección
+        window.location.href = "home.html";
     } 
 });

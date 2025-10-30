@@ -8,7 +8,7 @@ const boton3 = document.querySelector(".pack-info-button-2");
 
 let index = 0;
 let timer;
-const DURATION = 4000; // Pongo 4s porque le tengo puesto 2 a la transicición pa q no vaya muy rápido y 4-2=2s q es lo q nos piden
+const DURATION = 4000; // Pongo 4s porque le tengo puesto 2s a la transicición pa q no vaya muy rápido y 4-2=2s q es lo q nos piden
 // Lo único es q la primera transición tarda más en irse q las demás
 
 
@@ -25,7 +25,7 @@ function showSlide(n) {
     track.style.transform = `translateX(${offset}%)`;
 }
 
-
+// Lógica de los botones del carrusel
 
 boton1.addEventListener("click", () => {
   let compra_actual = JSON.parse(localStorage.getItem("compra_actual"));
@@ -80,7 +80,7 @@ boton3.addEventListener("click", () => {
   compra_actual.imagen = "images/Carrusel-3.png";
   compra_actual.descripcion = "Este pack propone una inmersión en la comarca de La Serena, una de las zonas más singulares y menos transitadas de Extremadura.  " +
                         "La experiencia incluye una visita al histórico Medellín, cuna de Hernán Cortés, donde pasado y paisaje se funden entre ruinas romanas, río y llanura. " +
-                        "El alojamiento será en la acogedora Casa de Manchado, una vivienda rural con trato cercano y ambiente familiar, ideal para disfrutar de la calma y el silencio de la comarca. " +
+                        "El alojamiento será en la acogedora Casa Manchado, una vivienda rural con trato cercano y ambiente familiar, ideal para disfrutar de la calma y el silencio de la comarca. " +
                         "Cabe señalar que el itinerario no incluye Don Benito, localidad cercana pero que no aporta un interés especial a una propuesta centrada en naturaleza y patrimonio; no así Villanueva de la Serena, que sí destaca por su vida cultural, gastronomía y ambiente agradable junto al Guadiana. " +
                         "Este es un viaje pensado para quienes buscan exclusividad, desconexión y la Extremadura más pura.";
   localStorage.setItem("compra_actual", JSON.stringify(compra_actual));
@@ -103,6 +103,7 @@ nextBtn.addEventListener("click", () => {
     startAutoPlay();
 });
 
+// Funciones para el cambio automático en el carrusel
 
 function startAutoPlay() {
     timer = setTimeout(function auto() {

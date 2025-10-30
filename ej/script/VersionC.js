@@ -5,7 +5,7 @@ const tipo_tarjeta = document.getElementById("tipo-tarjeta");
 const numero_tarjeta = document.querySelector(".numero-tarjeta");
 const nombre_titular = document.querySelector(".nombre_titular");
 const fecha = document.getElementById("fcad");
-const cvv = document.querySelector("CVV");
+const cvv = document.querySelector(".CVV");
 
 const compra_actual = JSON.parse(localStorage.getItem("compra_actual"));
 const imagen_pack = document.querySelector(".imagen-pack");
@@ -26,9 +26,9 @@ form.addEventListener("submit", (e) => {
 
     const nombre = nombreInput.value.trim();
 
-    // 1️⃣ Nombre: mínimo 3 caracteres
+    // Nombre: mínimo 3 caracteres
     if (nombre.length < 3) {
-        return alert("❌ El nombre debe tener al menos 3 caracteres.");
+        return alert("El nombre debe tener al menos 3 caracteres.");
     }
 
     // Correo
@@ -42,7 +42,7 @@ form.addEventListener("submit", (e) => {
     }
 
     if (!patronCorreo.test(correo)) {
-        return alert("❌ El correo electrónico no tiene un formato válido (debe ser nombre@dominio.extensión).");        
+        return alert("El correo electrónico no tiene un formato válido (debe ser nombre@dominio.extensión).");
     }
     // Tipo de tarjera
 
@@ -51,15 +51,16 @@ form.addEventListener("submit", (e) => {
     }
     // Número de tarjeta
 
-    if (![13, 15, 16, 19].includes(numero_tarjeta.length)){
+    if (![13, 15, 16, 19].includes(numero_tarjeta.value.trim().length)){
+        console.log("Longitud tarjeta:", numero_tarjeta.value.trim().length);
         return alert("El número de tarjeta debe tener longitud 13,15,16 o 19.")
     }
     // Nombre titular
     const nombre_t = nombre_titular.value.trim();
 
-    // 1️⃣ Nombre: mínimo 3 caracteres
+    // Nombre: mínimo 3 caracteres
     if (nombre_t.length < 3) {
-        return alert("❌ El nombre del titular de la tarjeta debe tener al menos 3 caracteres.");
+        return alert("El nombre del titular de la tarjeta debe tener al menos 3 caracteres.");
     }
 
     // Fecha
@@ -77,13 +78,14 @@ form.addEventListener("submit", (e) => {
     }
 
     // CVV
-    if (cvv.length !== 3) {
-        return alert("❌ El cvv de la tarjeta debe tener 3 dígitos.");
+    if (cvv.value.trim().length !== 3) {
+        console.log("Longitud CVV:", cvv.value.trim().length);
+        return alert("El cvv de la tarjeta debe tener 3 dígitos.");
     }
 
 
 
-    alert("✅ Compra realizada");
+    alert("Compra realizada");
 
 });
 
@@ -98,18 +100,18 @@ function es_corto(palabra) {
 
 
 function validar_contraseña(contraseña) {
-    // 1️⃣ Longitud exacta
+    // Longitud exacta
     if (contraseña.length !== 8) {
-        return "❌ La contraseña debe tener exactamente 8 caracteres.";
+        return "La contraseña debe tener exactamente 8 caracteres.";
     }
 
-    // 2️⃣ Contadores
+    // Contadores
     let numeros = 0;
     let mayus = 0;
     let minus = 0;
     let especiales = 0;
 
-    // 3️⃣ Recorrer carácter a carácter
+    // Recorrer carácter a carácter
     for (const c of contraseña) {
         if (c >= '0' && c <= '9') numeros++;
         else if (c >= 'A' && c <= 'Z') mayus++;
@@ -117,12 +119,11 @@ function validar_contraseña(contraseña) {
         else especiales++;
     }
 
-    // 4️⃣ Comprobaciones
-    if (numeros < 2) return "❌ Debe contener al menos 2 números.";
-    if (mayus < 1) return "❌ Debe contener al menos 1 letra mayúscula.";
-    if (minus < 1) return "❌ Debe contener al menos 1 letra minúscula.";
-    if (especiales < 1) return "❌ Debe contener al menos 1 carácter especial.";
+    // Comprobaciones
+    if (numeros < 2) return "Debe contener al menos 2 números.";
+    if (mayus < 1) return "Debe contener al menos 1 letra mayúscula.";
+    if (minus < 1) return "Debe contener al menos 1 letra minúscula.";
+    if (especiales < 1) return "Debe contener al menos 1 carácter especial.";
 
-    // ✅ Si pasa todo:
     return "Todo ok";
 }

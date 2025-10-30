@@ -11,7 +11,7 @@ const privacidad = document.getElementById("privacidad");
 
 const guardar = document.querySelector(".Guardar");
 
-// Escuchar cuando cambia el checkbox
+// Evento para mostrar/ocultar el botón de guardar según el checkbox de privacidad
 privacidad.addEventListener("change", () => {
     if (privacidad.checked) {
         guardar.style.display = "flex"; // Mostrar botón
@@ -20,17 +20,12 @@ privacidad.addEventListener("change", () => {
     }
 });
 
-
+// Lógica del formulario de registro
 form.addEventListener("submit", (e) => {
     e.preventDefault(); // evita que se recargue la página
 
     const nombre = nombreInput.value.trim();
     const apellidos = apellidosInput.value.trim();
-
-    // --- VALIDACIONES ---
-    if (!nombre || !apellidos) {
-        return alert("Los campos marcados con * son obligatorios.", "error");
-    }
 
     // Nombre: mínimo 3 caracteres
     if (nombre.length < 3) {
@@ -48,16 +43,9 @@ form.addEventListener("submit", (e) => {
 
     const correo = mail.value.trim();
     const correo_conf = mail_confirmation.value.trim();
-    // Perimitimos nombre@dominio.extensión como mínimo una letra por 
+    // Permitimos nombre@dominio.extensión como mínimo una letra por cada parte (antes de @, entre @ y . y después de .)
     const patronCorreo = /^[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\.[a-zA-Z]+$/;
 
-
-    if (!correo){
-        return alert("El correo es obligatorio.")
-    }
-    if (!correo_conf){
-        return alert("Tienes que confirmar el correo.")
-    }
 
     if (!patronCorreo.test(correo)) {
         return alert("El correo electrónico no tiene un formato válido (debe ser nombre@dominio.extensión).");        
@@ -66,7 +54,7 @@ form.addEventListener("submit", (e) => {
         return alert("Los correos electrónicos no coinciden. Revisa que los correos sean iguales.");        
     }
 
-    // Fecha
+    // Fecha (Opcional)
 
     let fecha = fnacim.value;
     if (fecha) {
@@ -74,11 +62,11 @@ form.addEventListener("submit", (e) => {
         const hoy = new Date();
 
         if (fecha > hoy) {
-            return alert("Los viajes al futuro no se han inventado todavía!! Pon una fecha real por favor.");
+            return alert("No puedes poner una fecha futura. Pon una fecha real por favor.");
         }
 
         if (fecha.getFullYear() < 1900){
-            return alert("Es IMPOSIBLE que hayas nacido antes del S.XX!! Pon una fecha real por favor.");
+            return alert("Es imposible que hayas nacido antes del S.XX!! Pon una fecha real por favor.");
         }
     }
     // Login
@@ -89,7 +77,7 @@ form.addEventListener("submit", (e) => {
         return alert("El usuario tiene longitud mínima de 5 caracteres.");
     }
 
-    //Contraseña
+    // Contraseña
 
     const contraseña = password.value.trim();
 
@@ -104,16 +92,14 @@ form.addEventListener("submit", (e) => {
 
     const foto = img_perfil.files[0]; // Tomamos el primer archivo seleccionado
 
-    // 1️⃣ Comprobar si hay archivo
+    // Comprobar si hay archivo
     if (!foto) {
         return alert("Debes seleccionar una imagen de perfil.");
     }
 
-    // 2️⃣ Validar por extensión
+    // Validar por extensión
     const nombre_archivo = foto.name.toLowerCase(); 
-    const extensionesPermitidas = [".webp", ".png", ".jpg", ".jpeg"];
-
-    // Comprobamos si el nombre termina con alguna de las extensiones válidas
+    const extensionesPermitidas = [".webp", ".png", ".jpg"];
     const esValida = extensionesPermitidas.some(ext => nombre_archivo.endsWith(ext));
 
     if (!esValida) {
@@ -123,11 +109,11 @@ form.addEventListener("submit", (e) => {
     // Convertir imagen a base 64 para poder guardarla en localStorage
     const lector = new FileReader();
     lector.readAsDataURL(foto);
-    // Metemos el resto del código dentro del onload porque es asíncrono
+    
+    // Metemos el resto del código dentro del onload porque es asíncrono y necesitamos esperar a que termine la lectura de la imagen
     lector.onload = ev => {
         const base64 = ev.target.result;
     
-
     // Esperamos 
     const usuario_actual = {
         usuario,
@@ -141,7 +127,7 @@ form.addEventListener("submit", (e) => {
     
     guardar_usuario(usuario_actual);
 
-    alert("✅ Registro completado correctamente. Redirigiendo...", "ok");
+    alert("Registro completado correctamente. Redirigiendo...");
 
     localStorage.setItem("usuario_actual", usuario);
 
@@ -160,18 +146,17 @@ function es_corto(palabra) {
 
 
 function validar_contraseña(contraseña) {
-    // 1️⃣ Longitud exacta
+    // Longitud exacta
     if (contraseña.length !== 8) {
         return "La contraseña debe tener exactamente 8 caracteres.";
     }
 
-    // 2️⃣ Contadores
+    // Contadores para cada tipo de carácter
     let numeros = 0;
     let mayus = 0;
     let minus = 0;
     let especiales = 0;
 
-    // 3️⃣ Recorrer carácter a carácter
     for (const c of contraseña) {
         if (c >= '0' && c <= '9') numeros++;
         else if (c >= 'A' && c <= 'Z') mayus++;
@@ -179,32 +164,26 @@ function validar_contraseña(contraseña) {
         else especiales++;
     }
 
-    // 4️⃣ Comprobaciones
+    // Comprobaciones de los contadores
     if (numeros < 2) return "Debe contener al menos 2 números.";
     if (mayus < 1) return "Debe contener al menos 1 letra mayúscula.";
     if (minus < 1) return "Debe contener al menos 1 letra minúscula.";
     if (especiales < 1) return "Debe contener al menos 1 carácter especial.";
 
-    // ✅ Si pasa todo:
     return "Todo ok";
 }
 
 
 function guardar_usuario(usuario_actual) {
-    // 1️⃣ Leer lo que ya hay en localStorage
     let memoria = localStorage.getItem("usuarios");
 
-    // 2️⃣ Si no hay nada, creamos un diccionario vacío
     if (!memoria) {
         memoria = {};
     } else {
-    // Si sí hay, lo convertimos de texto → objeto
         memoria = JSON.parse(memoria);
     }
 
-    // 3️⃣ Añadir o actualizar al usuario actual
-    // Suponemos que usuario_actual tiene forma:
-    // { nombre: "ana", password: "1234", email: "ana@uc3m.es" }
+    //  Añadir o actualizar al usuario actual
 
     memoria[usuario_actual.usuario] = {
         password: usuario_actual.contraseña,
@@ -214,8 +193,6 @@ function guardar_usuario(usuario_actual) {
         fnacim: usuario_actual.fecha,
         foto_perfil: usuario_actual.base64
     };
-    // 4️⃣ Guardar el nuevo diccionario como texto
+    // Guardar el objeto actualizado en localStorage
     localStorage.setItem("usuarios", JSON.stringify(memoria));
-
-    console.log("✅ Usuario guardado correctamente:", usuario_actual.nombre);
 }
